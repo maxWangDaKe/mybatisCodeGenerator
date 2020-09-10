@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.csdn.mapper.TbLoanFeeMapper">
+  <resultMap id="BaseResultMap" type="cn.csdn.pojo.TbLoanFee">
+    <id column="fee_id" jdbcType="VARCHAR" property="feeId" />
+    <result column="cost_type" jdbcType="VARCHAR" property="costType" />
+    <result column="Charging_direction" jdbcType="VARCHAR" property="chargingDirection" />
+    <result column="Charging_frequency" jdbcType="VARCHAR" property="chargingFrequency" />
+    <result column="Charging_type" jdbcType="VARCHAR" property="chargingType" />
+    <result column="charging_Proportion" jdbcType="INTEGER" property="chargingProportion" />
+    <result column="should_fee" jdbcType="DECIMAL" property="shouldFee" />
+    <result column="Reduction_fee" jdbcType="DECIMAL" property="reductionFee" />
+    <result column="Actual_fee" jdbcType="DECIMAL" property="actualFee" />
+    <result column="fee_date" jdbcType="DATE" property="feeDate" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="loan_detail_id" jdbcType="VARCHAR" property="loanDetailId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    fee_id, cost_type, Charging_direction, Charging_frequency, Charging_type, charging_Proportion, 
+    should_fee, Reduction_fee, Actual_fee, fee_date, create_time, update_time, loan_detail_id
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tb_loan_fee
+    where fee_id = #{feeId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from tb_loan_fee
+    where fee_id = #{feeId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="cn.csdn.pojo.TbLoanFee">
+    insert into tb_loan_fee (fee_id, cost_type, Charging_direction, 
+      Charging_frequency, Charging_type, charging_Proportion, 
+      should_fee, Reduction_fee, Actual_fee, 
+      fee_date, create_time, update_time, 
+      loan_detail_id)
+    values (#{feeId,jdbcType=VARCHAR}, #{costType,jdbcType=VARCHAR}, #{chargingDirection,jdbcType=VARCHAR}, 
+      #{chargingFrequency,jdbcType=VARCHAR}, #{chargingType,jdbcType=VARCHAR}, #{chargingProportion,jdbcType=INTEGER}, 
+      #{shouldFee,jdbcType=DECIMAL}, #{reductionFee,jdbcType=DECIMAL}, #{actualFee,jdbcType=DECIMAL}, 
+      #{feeDate,jdbcType=DATE}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{loanDetailId,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.csdn.pojo.TbLoanFee">
+    insert into tb_loan_fee
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="feeId != null">
+        fee_id,
+      </if>
+      <if test="costType != null">
+        cost_type,
+      </if>
+      <if test="chargingDirection != null">
+        Charging_direction,
+      </if>
+      <if test="chargingFrequency != null">
+        Charging_frequency,
+      </if>
+      <if test="chargingType != null">
+        Charging_type,
+      </if>
+      <if test="chargingProportion != null">
+        charging_Proportion,
+      </if>
+      <if test="shouldFee != null">
+        should_fee,
+      </if>
+      <if test="reductionFee != null">
+        Reduction_fee,
+      </if>
+      <if test="actualFee != null">
+        Actual_fee,
+      </if>
+      <if test="feeDate != null">
+        fee_date,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="loanDetailId != null">
+        loan_detail_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="feeId != null">
+        #{feeId,jdbcType=VARCHAR},
+      </if>
+      <if test="costType != null">
+        #{costType,jdbcType=VARCHAR},
+      </if>
+      <if test="chargingDirection != null">
+        #{chargingDirection,jdbcType=VARCHAR},
+      </if>
+      <if test="chargingFrequency != null">
+        #{chargingFrequency,jdbcType=VARCHAR},
+      </if>
+      <if test="chargingType != null">
+        #{chargingType,jdbcType=VARCHAR},
+      </if>
+      <if test="chargingProportion != null">
+        #{chargingProportion,jdbcType=INTEGER},
+      </if>
+      <if test="shouldFee != null">
+        #{shouldFee,jdbcType=DECIMAL},
+      </if>
+      <if test="reductionFee != null">
+        #{reductionFee,jdbcType=DECIMAL},
+      </if>
+      <if test="actualFee != null">
+        #{actualFee,jdbcType=DECIMAL},
+      </if>
+      <if test="feeDate != null">
+        #{feeDate,jdbcType=DATE},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="loanDetailId != null">
+        #{loanDetailId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.csdn.pojo.TbLoanFee">
+    update tb_loan_fee
+    <set>
+      <if test="costType != null">
+        cost_type = #{costType,jdbcType=VARCHAR},
+      </if>
+      <if test="chargingDirection != null">
+        Charging_direction = #{chargingDirection,jdbcType=VARCHAR},
+      </if>
+      <if test="chargingFrequency != null">
+        Charging_frequency = #{chargingFrequency,jdbcType=VARCHAR},
+      </if>
+      <if test="chargingType != null">
+        Charging_type = #{chargingType,jdbcType=VARCHAR},
+      </if>
+      <if test="chargingProportion != null">
+        charging_Proportion = #{chargingProportion,jdbcType=INTEGER},
+      </if>
+      <if test="shouldFee != null">
+        should_fee = #{shouldFee,jdbcType=DECIMAL},
+      </if>
+      <if test="reductionFee != null">
+        Reduction_fee = #{reductionFee,jdbcType=DECIMAL},
+      </if>
+      <if test="actualFee != null">
+        Actual_fee = #{actualFee,jdbcType=DECIMAL},
+      </if>
+      <if test="feeDate != null">
+        fee_date = #{feeDate,jdbcType=DATE},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="loanDetailId != null">
+        loan_detail_id = #{loanDetailId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where fee_id = #{feeId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.csdn.pojo.TbLoanFee">
+    update tb_loan_fee
+    set cost_type = #{costType,jdbcType=VARCHAR},
+      Charging_direction = #{chargingDirection,jdbcType=VARCHAR},
+      Charging_frequency = #{chargingFrequency,jdbcType=VARCHAR},
+      Charging_type = #{chargingType,jdbcType=VARCHAR},
+      charging_Proportion = #{chargingProportion,jdbcType=INTEGER},
+      should_fee = #{shouldFee,jdbcType=DECIMAL},
+      Reduction_fee = #{reductionFee,jdbcType=DECIMAL},
+      Actual_fee = #{actualFee,jdbcType=DECIMAL},
+      fee_date = #{feeDate,jdbcType=DATE},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      loan_detail_id = #{loanDetailId,jdbcType=VARCHAR}
+    where fee_id = #{feeId,jdbcType=VARCHAR}
+  </update>
+</mapper>

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.csdn.mapper.tbConAccountInfoMapper">
+  <resultMap id="BaseResultMap" type="cn.csdn.pojo.tbConAccountInfo">
+    <id column="ACCOUNT_ID" jdbcType="VARCHAR" property="accountId" />
+    <result column="CONTRACT_DETAIL_ID" jdbcType="VARCHAR" property="contractDetailId" />
+    <result column="BIZ_ACCOUNT_TYPE_CD" jdbcType="VARCHAR" property="bizAccountTypeCd" />
+    <result column="ACCOUNT_NUM" jdbcType="VARCHAR" property="accountNum" />
+    <result column="ACCOUNT_NAME" jdbcType="VARCHAR" property="accountName" />
+    <result column="OPENING_BANK_NO" jdbcType="VARCHAR" property="openingBankNo" />
+    <result column="OPENING_BANK_NAME" jdbcType="VARCHAR" property="openingBankName" />
+    <result column="BALANCE_OF_ACCOUNT" jdbcType="DECIMAL" property="balanceOfAccount" />
+    <result column="CURRENCY_CD" jdbcType="VARCHAR" property="currencyCd" />
+    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="IS_MONITOR_ACCOUNT" jdbcType="VARCHAR" property="isMonitorAccount" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    ACCOUNT_ID, CONTRACT_DETAIL_ID, BIZ_ACCOUNT_TYPE_CD, ACCOUNT_NUM, ACCOUNT_NAME, OPENING_BANK_NO, 
+    OPENING_BANK_NAME, BALANCE_OF_ACCOUNT, CURRENCY_CD, CREATE_TIME, UPDATE_TIME, IS_MONITOR_ACCOUNT
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tb_con_account_info
+    where ACCOUNT_ID = #{accountId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from tb_con_account_info
+    where ACCOUNT_ID = #{accountId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="cn.csdn.pojo.tbConAccountInfo">
+    insert into tb_con_account_info (ACCOUNT_ID, CONTRACT_DETAIL_ID, BIZ_ACCOUNT_TYPE_CD, 
+      ACCOUNT_NUM, ACCOUNT_NAME, OPENING_BANK_NO, 
+      OPENING_BANK_NAME, BALANCE_OF_ACCOUNT, CURRENCY_CD, 
+      CREATE_TIME, UPDATE_TIME, IS_MONITOR_ACCOUNT
+      )
+    values (#{accountId,jdbcType=VARCHAR}, #{contractDetailId,jdbcType=VARCHAR}, #{bizAccountTypeCd,jdbcType=VARCHAR}, 
+      #{accountNum,jdbcType=VARCHAR}, #{accountName,jdbcType=VARCHAR}, #{openingBankNo,jdbcType=VARCHAR}, 
+      #{openingBankName,jdbcType=VARCHAR}, #{balanceOfAccount,jdbcType=DECIMAL}, #{currencyCd,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{isMonitorAccount,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="cn.csdn.pojo.tbConAccountInfo">
+    insert into tb_con_account_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="accountId != null">
+        ACCOUNT_ID,
+      </if>
+      <if test="contractDetailId != null">
+        CONTRACT_DETAIL_ID,
+      </if>
+      <if test="bizAccountTypeCd != null">
+        BIZ_ACCOUNT_TYPE_CD,
+      </if>
+      <if test="accountNum != null">
+        ACCOUNT_NUM,
+      </if>
+      <if test="accountName != null">
+        ACCOUNT_NAME,
+      </if>
+      <if test="openingBankNo != null">
+        OPENING_BANK_NO,
+      </if>
+      <if test="openingBankName != null">
+        OPENING_BANK_NAME,
+      </if>
+      <if test="balanceOfAccount != null">
+        BALANCE_OF_ACCOUNT,
+      </if>
+      <if test="currencyCd != null">
+        CURRENCY_CD,
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME,
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME,
+      </if>
+      <if test="isMonitorAccount != null">
+        IS_MONITOR_ACCOUNT,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="accountId != null">
+        #{accountId,jdbcType=VARCHAR},
+      </if>
+      <if test="contractDetailId != null">
+        #{contractDetailId,jdbcType=VARCHAR},
+      </if>
+      <if test="bizAccountTypeCd != null">
+        #{bizAccountTypeCd,jdbcType=VARCHAR},
+      </if>
+      <if test="accountNum != null">
+        #{accountNum,jdbcType=VARCHAR},
+      </if>
+      <if test="accountName != null">
+        #{accountName,jdbcType=VARCHAR},
+      </if>
+      <if test="openingBankNo != null">
+        #{openingBankNo,jdbcType=VARCHAR},
+      </if>
+      <if test="openingBankName != null">
+        #{openingBankName,jdbcType=VARCHAR},
+      </if>
+      <if test="balanceOfAccount != null">
+        #{balanceOfAccount,jdbcType=DECIMAL},
+      </if>
+      <if test="currencyCd != null">
+        #{currencyCd,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isMonitorAccount != null">
+        #{isMonitorAccount,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.csdn.pojo.tbConAccountInfo">
+    update tb_con_account_info
+    <set>
+      <if test="contractDetailId != null">
+        CONTRACT_DETAIL_ID = #{contractDetailId,jdbcType=VARCHAR},
+      </if>
+      <if test="bizAccountTypeCd != null">
+        BIZ_ACCOUNT_TYPE_CD = #{bizAccountTypeCd,jdbcType=VARCHAR},
+      </if>
+      <if test="accountNum != null">
+        ACCOUNT_NUM = #{accountNum,jdbcType=VARCHAR},
+      </if>
+      <if test="accountName != null">
+        ACCOUNT_NAME = #{accountName,jdbcType=VARCHAR},
+      </if>
+      <if test="openingBankNo != null">
+        OPENING_BANK_NO = #{openingBankNo,jdbcType=VARCHAR},
+      </if>
+      <if test="openingBankName != null">
+        OPENING_BANK_NAME = #{openingBankName,jdbcType=VARCHAR},
+      </if>
+      <if test="balanceOfAccount != null">
+        BALANCE_OF_ACCOUNT = #{balanceOfAccount,jdbcType=DECIMAL},
+      </if>
+      <if test="currencyCd != null">
+        CURRENCY_CD = #{currencyCd,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isMonitorAccount != null">
+        IS_MONITOR_ACCOUNT = #{isMonitorAccount,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ACCOUNT_ID = #{accountId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.csdn.pojo.tbConAccountInfo">
+    update tb_con_account_info
+    set CONTRACT_DETAIL_ID = #{contractDetailId,jdbcType=VARCHAR},
+      BIZ_ACCOUNT_TYPE_CD = #{bizAccountTypeCd,jdbcType=VARCHAR},
+      ACCOUNT_NUM = #{accountNum,jdbcType=VARCHAR},
+      ACCOUNT_NAME = #{accountName,jdbcType=VARCHAR},
+      OPENING_BANK_NO = #{openingBankNo,jdbcType=VARCHAR},
+      OPENING_BANK_NAME = #{openingBankName,jdbcType=VARCHAR},
+      BALANCE_OF_ACCOUNT = #{balanceOfAccount,jdbcType=DECIMAL},
+      CURRENCY_CD = #{currencyCd,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      IS_MONITOR_ACCOUNT = #{isMonitorAccount,jdbcType=VARCHAR}
+    where ACCOUNT_ID = #{accountId,jdbcType=VARCHAR}
+  </update>
+</mapper>

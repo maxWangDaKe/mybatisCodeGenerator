@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.csdn.mapper.tbConContractDetailMapper">
+  <resultMap id="BaseResultMap" type="cn.csdn.pojo.tbConContractDetail">
+    <id column="CONTRACT_DETAIL_ID" jdbcType="VARCHAR" property="contractDetailId" />
+    <result column="CONTRACT_ID" jdbcType="VARCHAR" property="contractId" />
+    <result column="APPROVE_DETAIL_ID" jdbcType="VARCHAR" property="approveDetailId" />
+    <result column="PRODUCT_CD" jdbcType="VARCHAR" property="productCd" />
+    <result column="BROAD_CYCLE" jdbcType="DECIMAL" property="broadCycle" />
+    <result column="BROAD_CYCLE_UNIT" jdbcType="VARCHAR" property="broadCycleUnit" />
+    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="LOAN_AMT" jdbcType="DECIMAL" property="loanAmt" />
+    <result column="CURRENCY_CD" jdbcType="VARCHAR" property="currencyCd" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    CONTRACT_DETAIL_ID, CONTRACT_ID, APPROVE_DETAIL_ID, PRODUCT_CD, BROAD_CYCLE, BROAD_CYCLE_UNIT, 
+    CREATE_TIME, UPDATE_TIME, LOAN_AMT, CURRENCY_CD
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tb_con_contract_detail
+    where CONTRACT_DETAIL_ID = #{contractDetailId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from tb_con_contract_detail
+    where CONTRACT_DETAIL_ID = #{contractDetailId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="cn.csdn.pojo.tbConContractDetail">
+    insert into tb_con_contract_detail (CONTRACT_DETAIL_ID, CONTRACT_ID, APPROVE_DETAIL_ID, 
+      PRODUCT_CD, BROAD_CYCLE, BROAD_CYCLE_UNIT, 
+      CREATE_TIME, UPDATE_TIME, LOAN_AMT, 
+      CURRENCY_CD)
+    values (#{contractDetailId,jdbcType=VARCHAR}, #{contractId,jdbcType=VARCHAR}, #{approveDetailId,jdbcType=VARCHAR}, 
+      #{productCd,jdbcType=VARCHAR}, #{broadCycle,jdbcType=DECIMAL}, #{broadCycleUnit,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{loanAmt,jdbcType=DECIMAL}, 
+      #{currencyCd,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.csdn.pojo.tbConContractDetail">
+    insert into tb_con_contract_detail
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="contractDetailId != null">
+        CONTRACT_DETAIL_ID,
+      </if>
+      <if test="contractId != null">
+        CONTRACT_ID,
+      </if>
+      <if test="approveDetailId != null">
+        APPROVE_DETAIL_ID,
+      </if>
+      <if test="productCd != null">
+        PRODUCT_CD,
+      </if>
+      <if test="broadCycle != null">
+        BROAD_CYCLE,
+      </if>
+      <if test="broadCycleUnit != null">
+        BROAD_CYCLE_UNIT,
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME,
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME,
+      </if>
+      <if test="loanAmt != null">
+        LOAN_AMT,
+      </if>
+      <if test="currencyCd != null">
+        CURRENCY_CD,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="contractDetailId != null">
+        #{contractDetailId,jdbcType=VARCHAR},
+      </if>
+      <if test="contractId != null">
+        #{contractId,jdbcType=VARCHAR},
+      </if>
+      <if test="approveDetailId != null">
+        #{approveDetailId,jdbcType=VARCHAR},
+      </if>
+      <if test="productCd != null">
+        #{productCd,jdbcType=VARCHAR},
+      </if>
+      <if test="broadCycle != null">
+        #{broadCycle,jdbcType=DECIMAL},
+      </if>
+      <if test="broadCycleUnit != null">
+        #{broadCycleUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="loanAmt != null">
+        #{loanAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="currencyCd != null">
+        #{currencyCd,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.csdn.pojo.tbConContractDetail">
+    update tb_con_contract_detail
+    <set>
+      <if test="contractId != null">
+        CONTRACT_ID = #{contractId,jdbcType=VARCHAR},
+      </if>
+      <if test="approveDetailId != null">
+        APPROVE_DETAIL_ID = #{approveDetailId,jdbcType=VARCHAR},
+      </if>
+      <if test="productCd != null">
+        PRODUCT_CD = #{productCd,jdbcType=VARCHAR},
+      </if>
+      <if test="broadCycle != null">
+        BROAD_CYCLE = #{broadCycle,jdbcType=DECIMAL},
+      </if>
+      <if test="broadCycleUnit != null">
+        BROAD_CYCLE_UNIT = #{broadCycleUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="loanAmt != null">
+        LOAN_AMT = #{loanAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="currencyCd != null">
+        CURRENCY_CD = #{currencyCd,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where CONTRACT_DETAIL_ID = #{contractDetailId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.csdn.pojo.tbConContractDetail">
+    update tb_con_contract_detail
+    set CONTRACT_ID = #{contractId,jdbcType=VARCHAR},
+      APPROVE_DETAIL_ID = #{approveDetailId,jdbcType=VARCHAR},
+      PRODUCT_CD = #{productCd,jdbcType=VARCHAR},
+      BROAD_CYCLE = #{broadCycle,jdbcType=DECIMAL},
+      BROAD_CYCLE_UNIT = #{broadCycleUnit,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      LOAN_AMT = #{loanAmt,jdbcType=DECIMAL},
+      CURRENCY_CD = #{currencyCd,jdbcType=VARCHAR}
+    where CONTRACT_DETAIL_ID = #{contractDetailId,jdbcType=VARCHAR}
+  </update>
+  <resultMap id="BaseResultMap" type="cn.csdn.pojo.tbConContractDetail">
+    <id column="CONTRACT_DETAIL_ID" jdbcType="VARCHAR" property="contractDetailId" />
+    <result column="CONTRACT_ID" jdbcType="VARCHAR" property="contractId" />
+    <result column="APPROVE_DETAIL_ID" jdbcType="VARCHAR" property="approveDetailId" />
+    <result column="PRODUCT_CD" jdbcType="VARCHAR" property="productCd" />
+    <result column="BROAD_CYCLE" jdbcType="DECIMAL" property="broadCycle" />
+    <result column="BROAD_CYCLE_UNIT" jdbcType="VARCHAR" property="broadCycleUnit" />
+    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="LOAN_AMT" jdbcType="DECIMAL" property="loanAmt" />
+    <result column="CURRENCY_CD" jdbcType="VARCHAR" property="currencyCd" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    CONTRACT_DETAIL_ID, CONTRACT_ID, APPROVE_DETAIL_ID, PRODUCT_CD, BROAD_CYCLE, BROAD_CYCLE_UNIT, 
+    CREATE_TIME, UPDATE_TIME, LOAN_AMT, CURRENCY_CD
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tb_con_contract_detail
+    where CONTRACT_DETAIL_ID = #{contractDetailId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from tb_con_contract_detail
+    where CONTRACT_DETAIL_ID = #{contractDetailId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="cn.csdn.pojo.tbConContractDetail">
+    insert into tb_con_contract_detail (CONTRACT_DETAIL_ID, CONTRACT_ID, APPROVE_DETAIL_ID, 
+      PRODUCT_CD, BROAD_CYCLE, BROAD_CYCLE_UNIT, 
+      CREATE_TIME, UPDATE_TIME, LOAN_AMT, 
+      CURRENCY_CD)
+    values (#{contractDetailId,jdbcType=VARCHAR}, #{contractId,jdbcType=VARCHAR}, #{approveDetailId,jdbcType=VARCHAR}, 
+      #{productCd,jdbcType=VARCHAR}, #{broadCycle,jdbcType=DECIMAL}, #{broadCycleUnit,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{loanAmt,jdbcType=DECIMAL}, 
+      #{currencyCd,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.csdn.pojo.tbConContractDetail">
+    insert into tb_con_contract_detail
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="contractDetailId != null">
+        CONTRACT_DETAIL_ID,
+      </if>
+      <if test="contractId != null">
+        CONTRACT_ID,
+      </if>
+      <if test="approveDetailId != null">
+        APPROVE_DETAIL_ID,
+      </if>
+      <if test="productCd != null">
+        PRODUCT_CD,
+      </if>
+      <if test="broadCycle != null">
+        BROAD_CYCLE,
+      </if>
+      <if test="broadCycleUnit != null">
+        BROAD_CYCLE_UNIT,
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME,
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME,
+      </if>
+      <if test="loanAmt != null">
+        LOAN_AMT,
+      </if>
+      <if test="currencyCd != null">
+        CURRENCY_CD,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="contractDetailId != null">
+        #{contractDetailId,jdbcType=VARCHAR},
+      </if>
+      <if test="contractId != null">
+        #{contractId,jdbcType=VARCHAR},
+      </if>
+      <if test="approveDetailId != null">
+        #{approveDetailId,jdbcType=VARCHAR},
+      </if>
+      <if test="productCd != null">
+        #{productCd,jdbcType=VARCHAR},
+      </if>
+      <if test="broadCycle != null">
+        #{broadCycle,jdbcType=DECIMAL},
+      </if>
+      <if test="broadCycleUnit != null">
+        #{broadCycleUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="loanAmt != null">
+        #{loanAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="currencyCd != null">
+        #{currencyCd,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.csdn.pojo.tbConContractDetail">
+    update tb_con_contract_detail
+    <set>
+      <if test="contractId != null">
+        CONTRACT_ID = #{contractId,jdbcType=VARCHAR},
+      </if>
+      <if test="approveDetailId != null">
+        APPROVE_DETAIL_ID = #{approveDetailId,jdbcType=VARCHAR},
+      </if>
+      <if test="productCd != null">
+        PRODUCT_CD = #{productCd,jdbcType=VARCHAR},
+      </if>
+      <if test="broadCycle != null">
+        BROAD_CYCLE = #{broadCycle,jdbcType=DECIMAL},
+      </if>
+      <if test="broadCycleUnit != null">
+        BROAD_CYCLE_UNIT = #{broadCycleUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="loanAmt != null">
+        LOAN_AMT = #{loanAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="currencyCd != null">
+        CURRENCY_CD = #{currencyCd,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where CONTRACT_DETAIL_ID = #{contractDetailId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.csdn.pojo.tbConContractDetail">
+    update tb_con_contract_detail
+    set CONTRACT_ID = #{contractId,jdbcType=VARCHAR},
+      APPROVE_DETAIL_ID = #{approveDetailId,jdbcType=VARCHAR},
+      PRODUCT_CD = #{productCd,jdbcType=VARCHAR},
+      BROAD_CYCLE = #{broadCycle,jdbcType=DECIMAL},
+      BROAD_CYCLE_UNIT = #{broadCycleUnit,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      LOAN_AMT = #{loanAmt,jdbcType=DECIMAL},
+      CURRENCY_CD = #{currencyCd,jdbcType=VARCHAR}
+    where CONTRACT_DETAIL_ID = #{contractDetailId,jdbcType=VARCHAR}
+  </update>
+</mapper>

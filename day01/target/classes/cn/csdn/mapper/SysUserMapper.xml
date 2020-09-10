@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.csdn.mapper.SysUserMapper">
+  <resultMap id="BaseResultMap" type="cn.csdn.pojo.SysUser">
+    <id column="ID" jdbcType="VARCHAR" property="id" />
+    <id column="USER_NUM" jdbcType="VARCHAR" property="userNum" />
+    <result column="USER_NAME" jdbcType="VARCHAR" property="userName" />
+    <result column="PASSWORD" jdbcType="VARCHAR" property="password" />
+    <result column="USER_MOTTO" jdbcType="VARCHAR" property="userMotto" />
+    <result column="TELEPHONE" jdbcType="VARCHAR" property="telephone" />
+    <result column="ADDRESS" jdbcType="VARCHAR" property="address" />
+    <result column="E-MAIL" jdbcType="VARCHAR" property="eMail" />
+    <result column="ICON_NUM" jdbcType="VARCHAR" property="iconNum" />
+    <result column="USER_SEX" jdbcType="CHAR" property="userSex" />
+    <result column="LAST_SIGIN_TIME" jdbcType="DATE" property="lastSiginTime" />
+    <result column="LOGIN_NUMBERS" jdbcType="INTEGER" property="loginNumbers" />
+    <result column="CREATE_NAME" jdbcType="VARCHAR" property="createName" />
+    <result column="CREATE_NUM" jdbcType="VARCHAR" property="createNum" />
+    <result column="UPDATE_NAME" jdbcType="VARCHAR" property="updateName" />
+    <result column="UPDATE_NUM" jdbcType="VARCHAR" property="updateNum" />
+    <result column="CREAT_TIME" jdbcType="DATE" property="creatTime" />
+    <result column="UPDATE_TIME" jdbcType="DATE" property="updateTime" />
+    <result column="STATE" jdbcType="CHAR" property="state" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    ID, USER_NUM, USER_NAME, PASSWORD, USER_MOTTO, TELEPHONE, ADDRESS, E-MAIL, ICON_NUM, 
+    USER_SEX, LAST_SIGIN_TIME, LOGIN_NUMBERS, CREATE_NAME, CREATE_NUM, UPDATE_NAME, UPDATE_NUM, 
+    CREAT_TIME, UPDATE_TIME, STATE
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="map" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from sys_user
+    where ID = #{id,jdbcType=VARCHAR}
+      and USER_NUM = #{userNum,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="map">
+    delete from sys_user
+    where ID = #{id,jdbcType=VARCHAR}
+      and USER_NUM = #{userNum,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="cn.csdn.pojo.SysUser">
+    insert into sys_user (ID, USER_NUM, USER_NAME, 
+      PASSWORD, USER_MOTTO, TELEPHONE, 
+      ADDRESS, E-MAIL, ICON_NUM, 
+      USER_SEX, LAST_SIGIN_TIME, LOGIN_NUMBERS, 
+      CREATE_NAME, CREATE_NUM, UPDATE_NAME, 
+      UPDATE_NUM, CREAT_TIME, UPDATE_TIME, 
+      STATE)
+    values (#{id,jdbcType=VARCHAR}, #{userNum,jdbcType=VARCHAR}, #{userName,jdbcType=VARCHAR}, 
+      #{password,jdbcType=VARCHAR}, #{userMotto,jdbcType=VARCHAR}, #{telephone,jdbcType=VARCHAR}, 
+      #{address,jdbcType=VARCHAR}, #{eMail,jdbcType=VARCHAR}, #{iconNum,jdbcType=VARCHAR}, 
+      #{userSex,jdbcType=CHAR}, #{lastSiginTime,jdbcType=DATE}, #{loginNumbers,jdbcType=INTEGER}, 
+      #{createName,jdbcType=VARCHAR}, #{createNum,jdbcType=VARCHAR}, #{updateName,jdbcType=VARCHAR}, 
+      #{updateNum,jdbcType=VARCHAR}, #{creatTime,jdbcType=DATE}, #{updateTime,jdbcType=DATE}, 
+      #{state,jdbcType=CHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.csdn.pojo.SysUser">
+    insert into sys_user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="userNum != null">
+        USER_NUM,
+      </if>
+      <if test="userName != null">
+        USER_NAME,
+      </if>
+      <if test="password != null">
+        PASSWORD,
+      </if>
+      <if test="userMotto != null">
+        USER_MOTTO,
+      </if>
+      <if test="telephone != null">
+        TELEPHONE,
+      </if>
+      <if test="address != null">
+        ADDRESS,
+      </if>
+      <if test="eMail != null">
+        E-MAIL,
+      </if>
+      <if test="iconNum != null">
+        ICON_NUM,
+      </if>
+      <if test="userSex != null">
+        USER_SEX,
+      </if>
+      <if test="lastSiginTime != null">
+        LAST_SIGIN_TIME,
+      </if>
+      <if test="loginNumbers != null">
+        LOGIN_NUMBERS,
+      </if>
+      <if test="createName != null">
+        CREATE_NAME,
+      </if>
+      <if test="createNum != null">
+        CREATE_NUM,
+      </if>
+      <if test="updateName != null">
+        UPDATE_NAME,
+      </if>
+      <if test="updateNum != null">
+        UPDATE_NUM,
+      </if>
+      <if test="creatTime != null">
+        CREAT_TIME,
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME,
+      </if>
+      <if test="state != null">
+        STATE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="userNum != null">
+        #{userNum,jdbcType=VARCHAR},
+      </if>
+      <if test="userName != null">
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="userMotto != null">
+        #{userMotto,jdbcType=VARCHAR},
+      </if>
+      <if test="telephone != null">
+        #{telephone,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="eMail != null">
+        #{eMail,jdbcType=VARCHAR},
+      </if>
+      <if test="iconNum != null">
+        #{iconNum,jdbcType=VARCHAR},
+      </if>
+      <if test="userSex != null">
+        #{userSex,jdbcType=CHAR},
+      </if>
+      <if test="lastSiginTime != null">
+        #{lastSiginTime,jdbcType=DATE},
+      </if>
+      <if test="loginNumbers != null">
+        #{loginNumbers,jdbcType=INTEGER},
+      </if>
+      <if test="createName != null">
+        #{createName,jdbcType=VARCHAR},
+      </if>
+      <if test="createNum != null">
+        #{createNum,jdbcType=VARCHAR},
+      </if>
+      <if test="updateName != null">
+        #{updateName,jdbcType=VARCHAR},
+      </if>
+      <if test="updateNum != null">
+        #{updateNum,jdbcType=VARCHAR},
+      </if>
+      <if test="creatTime != null">
+        #{creatTime,jdbcType=DATE},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=DATE},
+      </if>
+      <if test="state != null">
+        #{state,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.csdn.pojo.SysUser">
+    update sys_user
+    <set>
+      <if test="userName != null">
+        USER_NAME = #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        PASSWORD = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="userMotto != null">
+        USER_MOTTO = #{userMotto,jdbcType=VARCHAR},
+      </if>
+      <if test="telephone != null">
+        TELEPHONE = #{telephone,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        ADDRESS = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="eMail != null">
+        E-MAIL = #{eMail,jdbcType=VARCHAR},
+      </if>
+      <if test="iconNum != null">
+        ICON_NUM = #{iconNum,jdbcType=VARCHAR},
+      </if>
+      <if test="userSex != null">
+        USER_SEX = #{userSex,jdbcType=CHAR},
+      </if>
+      <if test="lastSiginTime != null">
+        LAST_SIGIN_TIME = #{lastSiginTime,jdbcType=DATE},
+      </if>
+      <if test="loginNumbers != null">
+        LOGIN_NUMBERS = #{loginNumbers,jdbcType=INTEGER},
+      </if>
+      <if test="createName != null">
+        CREATE_NAME = #{createName,jdbcType=VARCHAR},
+      </if>
+      <if test="createNum != null">
+        CREATE_NUM = #{createNum,jdbcType=VARCHAR},
+      </if>
+      <if test="updateName != null">
+        UPDATE_NAME = #{updateName,jdbcType=VARCHAR},
+      </if>
+      <if test="updateNum != null">
+        UPDATE_NUM = #{updateNum,jdbcType=VARCHAR},
+      </if>
+      <if test="creatTime != null">
+        CREAT_TIME = #{creatTime,jdbcType=DATE},
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME = #{updateTime,jdbcType=DATE},
+      </if>
+      <if test="state != null">
+        STATE = #{state,jdbcType=CHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=VARCHAR}
+      and USER_NUM = #{userNum,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.csdn.pojo.SysUser">
+    update sys_user
+    set USER_NAME = #{userName,jdbcType=VARCHAR},
+      PASSWORD = #{password,jdbcType=VARCHAR},
+      USER_MOTTO = #{userMotto,jdbcType=VARCHAR},
+      TELEPHONE = #{telephone,jdbcType=VARCHAR},
+      ADDRESS = #{address,jdbcType=VARCHAR},
+      E-MAIL = #{eMail,jdbcType=VARCHAR},
+      ICON_NUM = #{iconNum,jdbcType=VARCHAR},
+      USER_SEX = #{userSex,jdbcType=CHAR},
+      LAST_SIGIN_TIME = #{lastSiginTime,jdbcType=DATE},
+      LOGIN_NUMBERS = #{loginNumbers,jdbcType=INTEGER},
+      CREATE_NAME = #{createName,jdbcType=VARCHAR},
+      CREATE_NUM = #{createNum,jdbcType=VARCHAR},
+      UPDATE_NAME = #{updateName,jdbcType=VARCHAR},
+      UPDATE_NUM = #{updateNum,jdbcType=VARCHAR},
+      CREAT_TIME = #{creatTime,jdbcType=DATE},
+      UPDATE_TIME = #{updateTime,jdbcType=DATE},
+      STATE = #{state,jdbcType=CHAR}
+    where ID = #{id,jdbcType=VARCHAR}
+      and USER_NUM = #{userNum,jdbcType=VARCHAR}
+  </update>
+</mapper>

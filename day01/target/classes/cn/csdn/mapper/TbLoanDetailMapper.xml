@@ -1,0 +1,1150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.csdn.mapper.TbLoanDetailMapper">
+  <resultMap id="BaseResultMap" type="cn.csdn.pojo.TbLoanDetail">
+    <id column="loan_detail_id" jdbcType="VARCHAR" property="loanDetailId" />
+    <result column="product_cd" jdbcType="VARCHAR" property="productCd" />
+    <result column="loan_amt" jdbcType="DECIMAL" property="loanAmt" />
+    <result column="currency_cd" jdbcType="VARCHAR" property="currencyCd" />
+    <result column="term" jdbcType="DECIMAL" property="term" />
+    <result column="cycle_unit" jdbcType="VARCHAR" property="cycleUnit" />
+    <result column="expiration_date" jdbcType="DATE" property="expirationDate" />
+    <result column="start_date" jdbcType="DATE" property="startDate" />
+    <result column="loan_info_id" jdbcType="VARCHAR" property="loanInfoId" />
+    <result column="send_status_cd" jdbcType="VARCHAR" property="sendStatusCd" />
+    <result column="repayment_type" jdbcType="VARCHAR" property="repaymentType" />
+    <result column="if_trustee_to_pay" jdbcType="VARCHAR" property="ifTrusteeToPay" />
+    <result column="contract_detail_id" jdbcType="VARCHAR" property="contractDetailId" />
+    <result column="loan_detail_status_cd" jdbcType="VARCHAR" property="loanDetailStatusCd" />
+    <result column="party_id" jdbcType="VARCHAR" property="partyId" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="payout_way_cd" jdbcType="VARCHAR" property="payoutWayCd" />
+    <result column="broad_cycle" jdbcType="INTEGER" property="broadCycle" />
+    <result column="extend_term_unit_cd" jdbcType="VARCHAR" property="extendTermUnitCd" />
+    <result column="cycle_ind" jdbcType="VARCHAR" property="cycleInd" />
+    <result column="whether_exam_app_money_require" jdbcType="VARCHAR" property="whetherExamAppMoneyRequire" />
+    <result column="exam_app_money_require" jdbcType="VARCHAR" property="examAppMoneyRequire" />
+    <result column="settlement_way" jdbcType="VARCHAR" property="settlementWay" />
+    <result column="arrange_aotslypay_money" jdbcType="DECIMAL" property="arrangeAotslypayMoney" />
+    <result column="merit_liftpay_money" jdbcType="DECIMAL" property="meritLiftpayMoney" />
+    <result column="arrange_liftpay_money" jdbcType="DECIMAL" property="arrangeLiftpayMoney" />
+    <result column="out_account_org" jdbcType="VARCHAR" property="outAccountOrg" />
+    <result column="loan_apply_no" jdbcType="VARCHAR" property="loanApplyNo" />
+    <result column="credit_use_address" jdbcType="VARCHAR" property="creditUseAddress" />
+    <result column="distribute_type" jdbcType="VARCHAR" property="distributeType" />
+    <result column="user_num" jdbcType="VARCHAR" property="userNum" />
+    <result column="org_num" jdbcType="VARCHAR" property="orgNum" />
+    <result column="handling_date" jdbcType="DATE" property="handlingDate" />
+    <result column="accounting_org" jdbcType="VARCHAR" property="accountingOrg" />
+    <result column="category" jdbcType="VARCHAR" property="category" />
+    <result column="loan_belong" jdbcType="VARCHAR" property="loanBelong" />
+    <result column="lend_account" jdbcType="VARCHAR" property="lendAccount" />
+    <result column="repayment_account" jdbcType="VARCHAR" property="repaymentAccount" />
+    <result column="interest_repayment_account" jdbcType="VARCHAR" property="interestRepaymentAccount" />
+    <result column="loan_quasi_odd" jdbcType="VARCHAR" property="loanQuasiOdd" />
+    <result column="ditch_mark" jdbcType="VARCHAR" property="ditchMark" />
+    <result column="loan_use" jdbcType="VARCHAR" property="loanUse" />
+    <result column="credit_card_paynum" jdbcType="VARCHAR" property="creditCardPaynum" />
+    <result column="start_intrest_date" jdbcType="DATE" property="startIntrestDate" />
+    <result column="auto_replay_plan" jdbcType="VARCHAR" property="autoReplayPlan" />
+    <result column="defin_replay_plan" jdbcType="VARCHAR" property="definReplayPlan" />
+    <result column="lend_torepay_paynum" jdbcType="VARCHAR" property="lendTorepayPaynum" />
+    <result column="payout_cancel_reason" jdbcType="VARCHAR" property="payoutCancelReason" />
+    <result column="product_t24" jdbcType="VARCHAR" property="productT24" />
+    <result column="loanto_t24" jdbcType="VARCHAR" property="loantoT24" />
+    <result column="surety_mode" jdbcType="VARCHAR" property="suretyMode" />
+    <result column="bef_or_back" jdbcType="VARCHAR" property="befOrBack" />
+    <result column="basic_date" jdbcType="VARCHAR" property="basicDate" />
+    <result column="loan_apply_kind" jdbcType="VARCHAR" property="loanApplyKind" />
+    <result column="scf_loan_id" jdbcType="VARCHAR" property="scfLoanId" />
+    <result column="bms_loan_id" jdbcType="VARCHAR" property="bmsLoanId" />
+    <result column="cams_loan_id" jdbcType="VARCHAR" property="camsLoanId" />
+    <result column="trans_seq_no" jdbcType="VARCHAR" property="transSeqNo" />
+    <result column="loan_update_flag" jdbcType="VARCHAR" property="loanUpdateFlag" />
+    <result column="prin_movement" jdbcType="DECIMAL" property="prinMovement" />
+    <result column="movement_dt" jdbcType="DATE" property="movementDt" />
+    <result column="old_loan_id" jdbcType="VARCHAR" property="oldLoanId" />
+    <result column="up_reason" jdbcType="VARCHAR" property="upReason" />
+    <result column="cre_num" jdbcType="VARCHAR" property="creNum" />
+    <result column="bank_trans_no" jdbcType="VARCHAR" property="bankTransNo" />
+    <result column="reverse_flag" jdbcType="VARCHAR" property="reverseFlag" />
+    <result column="borrow_status_cd" jdbcType="VARCHAR" property="borrowStatusCd" />
+    <result column="pay_type" jdbcType="VARCHAR" property="payType" />
+    <result column="approve_currency_cd" jdbcType="VARCHAR" property="approveCurrencyCd" />
+    <result column="ApplyId" jdbcType="VARCHAR" property="applyid" />
+    <result column="ApplyName" jdbcType="VARCHAR" property="applyname" />
+    <result column="ApplyOrg" jdbcType="VARCHAR" property="applyorg" />
+    <result column="app_renew_front_mark" jdbcType="VARCHAR" property="appRenewFrontMark" />
+    <result column="capitalPosition" jdbcType="VARCHAR" property="capitalposition" />
+    <result column="IS_REFINANCE" jdbcType="VARCHAR" property="isRefinance" />
+    <result column="CHILD_PRODUCT_TYPE" jdbcType="VARCHAR" property="childProductType" />
+    <result column="IS_PATTERN" jdbcType="VARCHAR" property="isPattern" />
+    <result column="TXBK_LOAN_ID" jdbcType="VARCHAR" property="txbkLoanId" />
+    <result column="IS_SPECIAL" jdbcType="VARCHAR" property="isSpecial" />
+    <result column="IS_FINANCIAL_LOAN" jdbcType="VARCHAR" property="isFinancialLoan" />
+    <result column="FINANCIAL_LOAN_OPPONENT" jdbcType="VARCHAR" property="financialLoanOpponent" />
+    <result column="IS_SEAL" jdbcType="VARCHAR" property="isSeal" />
+    <result column="SUPPLEMENT_IND" jdbcType="VARCHAR" property="supplementInd" />
+    <result column="SUPPLEMENT_AMT" jdbcType="VARCHAR" property="supplementAmt" />
+    <result column="TB_LIST" jdbcType="VARCHAR" property="tbList" />
+    <result column="EX_SUPPLEMENT_IND" jdbcType="VARCHAR" property="exSupplementInd" />
+    <result column="LOAN_TURN_2017" jdbcType="VARCHAR" property="loanTurn2017" />
+    <result column="IS_PASS_SPPI" jdbcType="VARCHAR" property="isPassSppi" />
+    <result column="BUSINESS_TYPE" jdbcType="VARCHAR" property="businessType" />
+    <result column="THREE_CATEGORIES" jdbcType="VARCHAR" property="threeCategories" />
+    <result column="IF_REVIEW" jdbcType="VARCHAR" property="ifReview" />
+    <result column="DK_LOAN_ID" jdbcType="VARCHAR" property="dkLoanId" />
+    <result column="CLC_MTH_FLG" jdbcType="VARCHAR" property="clcMthFlg" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    loan_detail_id, product_cd, loan_amt, currency_cd, term, cycle_unit, expiration_date, 
+    start_date, loan_info_id, send_status_cd, repayment_type, if_trustee_to_pay, contract_detail_id, 
+    loan_detail_status_cd, party_id, create_time, update_time, payout_way_cd, broad_cycle, 
+    extend_term_unit_cd, cycle_ind, whether_exam_app_money_require, exam_app_money_require, 
+    settlement_way, arrange_aotslypay_money, merit_liftpay_money, arrange_liftpay_money, 
+    out_account_org, loan_apply_no, credit_use_address, distribute_type, user_num, org_num, 
+    handling_date, accounting_org, category, loan_belong, lend_account, repayment_account, 
+    interest_repayment_account, loan_quasi_odd, ditch_mark, loan_use, credit_card_paynum, 
+    start_intrest_date, auto_replay_plan, defin_replay_plan, lend_torepay_paynum, payout_cancel_reason, 
+    product_t24, loanto_t24, surety_mode, bef_or_back, basic_date, loan_apply_kind, scf_loan_id, 
+    bms_loan_id, cams_loan_id, trans_seq_no, loan_update_flag, prin_movement, movement_dt, 
+    old_loan_id, up_reason, cre_num, bank_trans_no, reverse_flag, borrow_status_cd, pay_type, 
+    approve_currency_cd, ApplyId, ApplyName, ApplyOrg, app_renew_front_mark, capitalPosition, 
+    IS_REFINANCE, CHILD_PRODUCT_TYPE, IS_PATTERN, TXBK_LOAN_ID, IS_SPECIAL, IS_FINANCIAL_LOAN, 
+    FINANCIAL_LOAN_OPPONENT, IS_SEAL, SUPPLEMENT_IND, SUPPLEMENT_AMT, TB_LIST, EX_SUPPLEMENT_IND, 
+    LOAN_TURN_2017, IS_PASS_SPPI, BUSINESS_TYPE, THREE_CATEGORIES, IF_REVIEW, DK_LOAN_ID, 
+    CLC_MTH_FLG
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tb_loan_detail
+    where loan_detail_id = #{loanDetailId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from tb_loan_detail
+    where loan_detail_id = #{loanDetailId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="cn.csdn.pojo.TbLoanDetail">
+    insert into tb_loan_detail (loan_detail_id, product_cd, loan_amt, 
+      currency_cd, term, cycle_unit, 
+      expiration_date, start_date, loan_info_id, 
+      send_status_cd, repayment_type, if_trustee_to_pay, 
+      contract_detail_id, loan_detail_status_cd, party_id, 
+      create_time, update_time, payout_way_cd, 
+      broad_cycle, extend_term_unit_cd, cycle_ind, 
+      whether_exam_app_money_require, exam_app_money_require, 
+      settlement_way, arrange_aotslypay_money, merit_liftpay_money, 
+      arrange_liftpay_money, out_account_org, loan_apply_no, 
+      credit_use_address, distribute_type, user_num, 
+      org_num, handling_date, accounting_org, 
+      category, loan_belong, lend_account, 
+      repayment_account, interest_repayment_account, 
+      loan_quasi_odd, ditch_mark, loan_use, 
+      credit_card_paynum, start_intrest_date, auto_replay_plan, 
+      defin_replay_plan, lend_torepay_paynum, payout_cancel_reason, 
+      product_t24, loanto_t24, surety_mode, 
+      bef_or_back, basic_date, loan_apply_kind, 
+      scf_loan_id, bms_loan_id, cams_loan_id, 
+      trans_seq_no, loan_update_flag, prin_movement, 
+      movement_dt, old_loan_id, up_reason, 
+      cre_num, bank_trans_no, reverse_flag, 
+      borrow_status_cd, pay_type, approve_currency_cd, 
+      ApplyId, ApplyName, ApplyOrg, 
+      app_renew_front_mark, capitalPosition, IS_REFINANCE, 
+      CHILD_PRODUCT_TYPE, IS_PATTERN, TXBK_LOAN_ID, 
+      IS_SPECIAL, IS_FINANCIAL_LOAN, FINANCIAL_LOAN_OPPONENT, 
+      IS_SEAL, SUPPLEMENT_IND, SUPPLEMENT_AMT, 
+      TB_LIST, EX_SUPPLEMENT_IND, LOAN_TURN_2017, 
+      IS_PASS_SPPI, BUSINESS_TYPE, THREE_CATEGORIES, 
+      IF_REVIEW, DK_LOAN_ID, CLC_MTH_FLG
+      )
+    values (#{loanDetailId,jdbcType=VARCHAR}, #{productCd,jdbcType=VARCHAR}, #{loanAmt,jdbcType=DECIMAL}, 
+      #{currencyCd,jdbcType=VARCHAR}, #{term,jdbcType=DECIMAL}, #{cycleUnit,jdbcType=VARCHAR}, 
+      #{expirationDate,jdbcType=DATE}, #{startDate,jdbcType=DATE}, #{loanInfoId,jdbcType=VARCHAR}, 
+      #{sendStatusCd,jdbcType=VARCHAR}, #{repaymentType,jdbcType=VARCHAR}, #{ifTrusteeToPay,jdbcType=VARCHAR}, 
+      #{contractDetailId,jdbcType=VARCHAR}, #{loanDetailStatusCd,jdbcType=VARCHAR}, #{partyId,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{payoutWayCd,jdbcType=VARCHAR}, 
+      #{broadCycle,jdbcType=INTEGER}, #{extendTermUnitCd,jdbcType=VARCHAR}, #{cycleInd,jdbcType=VARCHAR}, 
+      #{whetherExamAppMoneyRequire,jdbcType=VARCHAR}, #{examAppMoneyRequire,jdbcType=VARCHAR}, 
+      #{settlementWay,jdbcType=VARCHAR}, #{arrangeAotslypayMoney,jdbcType=DECIMAL}, #{meritLiftpayMoney,jdbcType=DECIMAL}, 
+      #{arrangeLiftpayMoney,jdbcType=DECIMAL}, #{outAccountOrg,jdbcType=VARCHAR}, #{loanApplyNo,jdbcType=VARCHAR}, 
+      #{creditUseAddress,jdbcType=VARCHAR}, #{distributeType,jdbcType=VARCHAR}, #{userNum,jdbcType=VARCHAR}, 
+      #{orgNum,jdbcType=VARCHAR}, #{handlingDate,jdbcType=DATE}, #{accountingOrg,jdbcType=VARCHAR}, 
+      #{category,jdbcType=VARCHAR}, #{loanBelong,jdbcType=VARCHAR}, #{lendAccount,jdbcType=VARCHAR}, 
+      #{repaymentAccount,jdbcType=VARCHAR}, #{interestRepaymentAccount,jdbcType=VARCHAR}, 
+      #{loanQuasiOdd,jdbcType=VARCHAR}, #{ditchMark,jdbcType=VARCHAR}, #{loanUse,jdbcType=VARCHAR}, 
+      #{creditCardPaynum,jdbcType=VARCHAR}, #{startIntrestDate,jdbcType=DATE}, #{autoReplayPlan,jdbcType=VARCHAR}, 
+      #{definReplayPlan,jdbcType=VARCHAR}, #{lendTorepayPaynum,jdbcType=VARCHAR}, #{payoutCancelReason,jdbcType=VARCHAR}, 
+      #{productT24,jdbcType=VARCHAR}, #{loantoT24,jdbcType=VARCHAR}, #{suretyMode,jdbcType=VARCHAR}, 
+      #{befOrBack,jdbcType=VARCHAR}, #{basicDate,jdbcType=VARCHAR}, #{loanApplyKind,jdbcType=VARCHAR}, 
+      #{scfLoanId,jdbcType=VARCHAR}, #{bmsLoanId,jdbcType=VARCHAR}, #{camsLoanId,jdbcType=VARCHAR}, 
+      #{transSeqNo,jdbcType=VARCHAR}, #{loanUpdateFlag,jdbcType=VARCHAR}, #{prinMovement,jdbcType=DECIMAL}, 
+      #{movementDt,jdbcType=DATE}, #{oldLoanId,jdbcType=VARCHAR}, #{upReason,jdbcType=VARCHAR}, 
+      #{creNum,jdbcType=VARCHAR}, #{bankTransNo,jdbcType=VARCHAR}, #{reverseFlag,jdbcType=VARCHAR}, 
+      #{borrowStatusCd,jdbcType=VARCHAR}, #{payType,jdbcType=VARCHAR}, #{approveCurrencyCd,jdbcType=VARCHAR}, 
+      #{applyid,jdbcType=VARCHAR}, #{applyname,jdbcType=VARCHAR}, #{applyorg,jdbcType=VARCHAR}, 
+      #{appRenewFrontMark,jdbcType=VARCHAR}, #{capitalposition,jdbcType=VARCHAR}, #{isRefinance,jdbcType=VARCHAR}, 
+      #{childProductType,jdbcType=VARCHAR}, #{isPattern,jdbcType=VARCHAR}, #{txbkLoanId,jdbcType=VARCHAR}, 
+      #{isSpecial,jdbcType=VARCHAR}, #{isFinancialLoan,jdbcType=VARCHAR}, #{financialLoanOpponent,jdbcType=VARCHAR}, 
+      #{isSeal,jdbcType=VARCHAR}, #{supplementInd,jdbcType=VARCHAR}, #{supplementAmt,jdbcType=VARCHAR}, 
+      #{tbList,jdbcType=VARCHAR}, #{exSupplementInd,jdbcType=VARCHAR}, #{loanTurn2017,jdbcType=VARCHAR}, 
+      #{isPassSppi,jdbcType=VARCHAR}, #{businessType,jdbcType=VARCHAR}, #{threeCategories,jdbcType=VARCHAR}, 
+      #{ifReview,jdbcType=VARCHAR}, #{dkLoanId,jdbcType=VARCHAR}, #{clcMthFlg,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="cn.csdn.pojo.TbLoanDetail">
+    insert into tb_loan_detail
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="loanDetailId != null">
+        loan_detail_id,
+      </if>
+      <if test="productCd != null">
+        product_cd,
+      </if>
+      <if test="loanAmt != null">
+        loan_amt,
+      </if>
+      <if test="currencyCd != null">
+        currency_cd,
+      </if>
+      <if test="term != null">
+        term,
+      </if>
+      <if test="cycleUnit != null">
+        cycle_unit,
+      </if>
+      <if test="expirationDate != null">
+        expiration_date,
+      </if>
+      <if test="startDate != null">
+        start_date,
+      </if>
+      <if test="loanInfoId != null">
+        loan_info_id,
+      </if>
+      <if test="sendStatusCd != null">
+        send_status_cd,
+      </if>
+      <if test="repaymentType != null">
+        repayment_type,
+      </if>
+      <if test="ifTrusteeToPay != null">
+        if_trustee_to_pay,
+      </if>
+      <if test="contractDetailId != null">
+        contract_detail_id,
+      </if>
+      <if test="loanDetailStatusCd != null">
+        loan_detail_status_cd,
+      </if>
+      <if test="partyId != null">
+        party_id,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="payoutWayCd != null">
+        payout_way_cd,
+      </if>
+      <if test="broadCycle != null">
+        broad_cycle,
+      </if>
+      <if test="extendTermUnitCd != null">
+        extend_term_unit_cd,
+      </if>
+      <if test="cycleInd != null">
+        cycle_ind,
+      </if>
+      <if test="whetherExamAppMoneyRequire != null">
+        whether_exam_app_money_require,
+      </if>
+      <if test="examAppMoneyRequire != null">
+        exam_app_money_require,
+      </if>
+      <if test="settlementWay != null">
+        settlement_way,
+      </if>
+      <if test="arrangeAotslypayMoney != null">
+        arrange_aotslypay_money,
+      </if>
+      <if test="meritLiftpayMoney != null">
+        merit_liftpay_money,
+      </if>
+      <if test="arrangeLiftpayMoney != null">
+        arrange_liftpay_money,
+      </if>
+      <if test="outAccountOrg != null">
+        out_account_org,
+      </if>
+      <if test="loanApplyNo != null">
+        loan_apply_no,
+      </if>
+      <if test="creditUseAddress != null">
+        credit_use_address,
+      </if>
+      <if test="distributeType != null">
+        distribute_type,
+      </if>
+      <if test="userNum != null">
+        user_num,
+      </if>
+      <if test="orgNum != null">
+        org_num,
+      </if>
+      <if test="handlingDate != null">
+        handling_date,
+      </if>
+      <if test="accountingOrg != null">
+        accounting_org,
+      </if>
+      <if test="category != null">
+        category,
+      </if>
+      <if test="loanBelong != null">
+        loan_belong,
+      </if>
+      <if test="lendAccount != null">
+        lend_account,
+      </if>
+      <if test="repaymentAccount != null">
+        repayment_account,
+      </if>
+      <if test="interestRepaymentAccount != null">
+        interest_repayment_account,
+      </if>
+      <if test="loanQuasiOdd != null">
+        loan_quasi_odd,
+      </if>
+      <if test="ditchMark != null">
+        ditch_mark,
+      </if>
+      <if test="loanUse != null">
+        loan_use,
+      </if>
+      <if test="creditCardPaynum != null">
+        credit_card_paynum,
+      </if>
+      <if test="startIntrestDate != null">
+        start_intrest_date,
+      </if>
+      <if test="autoReplayPlan != null">
+        auto_replay_plan,
+      </if>
+      <if test="definReplayPlan != null">
+        defin_replay_plan,
+      </if>
+      <if test="lendTorepayPaynum != null">
+        lend_torepay_paynum,
+      </if>
+      <if test="payoutCancelReason != null">
+        payout_cancel_reason,
+      </if>
+      <if test="productT24 != null">
+        product_t24,
+      </if>
+      <if test="loantoT24 != null">
+        loanto_t24,
+      </if>
+      <if test="suretyMode != null">
+        surety_mode,
+      </if>
+      <if test="befOrBack != null">
+        bef_or_back,
+      </if>
+      <if test="basicDate != null">
+        basic_date,
+      </if>
+      <if test="loanApplyKind != null">
+        loan_apply_kind,
+      </if>
+      <if test="scfLoanId != null">
+        scf_loan_id,
+      </if>
+      <if test="bmsLoanId != null">
+        bms_loan_id,
+      </if>
+      <if test="camsLoanId != null">
+        cams_loan_id,
+      </if>
+      <if test="transSeqNo != null">
+        trans_seq_no,
+      </if>
+      <if test="loanUpdateFlag != null">
+        loan_update_flag,
+      </if>
+      <if test="prinMovement != null">
+        prin_movement,
+      </if>
+      <if test="movementDt != null">
+        movement_dt,
+      </if>
+      <if test="oldLoanId != null">
+        old_loan_id,
+      </if>
+      <if test="upReason != null">
+        up_reason,
+      </if>
+      <if test="creNum != null">
+        cre_num,
+      </if>
+      <if test="bankTransNo != null">
+        bank_trans_no,
+      </if>
+      <if test="reverseFlag != null">
+        reverse_flag,
+      </if>
+      <if test="borrowStatusCd != null">
+        borrow_status_cd,
+      </if>
+      <if test="payType != null">
+        pay_type,
+      </if>
+      <if test="approveCurrencyCd != null">
+        approve_currency_cd,
+      </if>
+      <if test="applyid != null">
+        ApplyId,
+      </if>
+      <if test="applyname != null">
+        ApplyName,
+      </if>
+      <if test="applyorg != null">
+        ApplyOrg,
+      </if>
+      <if test="appRenewFrontMark != null">
+        app_renew_front_mark,
+      </if>
+      <if test="capitalposition != null">
+        capitalPosition,
+      </if>
+      <if test="isRefinance != null">
+        IS_REFINANCE,
+      </if>
+      <if test="childProductType != null">
+        CHILD_PRODUCT_TYPE,
+      </if>
+      <if test="isPattern != null">
+        IS_PATTERN,
+      </if>
+      <if test="txbkLoanId != null">
+        TXBK_LOAN_ID,
+      </if>
+      <if test="isSpecial != null">
+        IS_SPECIAL,
+      </if>
+      <if test="isFinancialLoan != null">
+        IS_FINANCIAL_LOAN,
+      </if>
+      <if test="financialLoanOpponent != null">
+        FINANCIAL_LOAN_OPPONENT,
+      </if>
+      <if test="isSeal != null">
+        IS_SEAL,
+      </if>
+      <if test="supplementInd != null">
+        SUPPLEMENT_IND,
+      </if>
+      <if test="supplementAmt != null">
+        SUPPLEMENT_AMT,
+      </if>
+      <if test="tbList != null">
+        TB_LIST,
+      </if>
+      <if test="exSupplementInd != null">
+        EX_SUPPLEMENT_IND,
+      </if>
+      <if test="loanTurn2017 != null">
+        LOAN_TURN_2017,
+      </if>
+      <if test="isPassSppi != null">
+        IS_PASS_SPPI,
+      </if>
+      <if test="businessType != null">
+        BUSINESS_TYPE,
+      </if>
+      <if test="threeCategories != null">
+        THREE_CATEGORIES,
+      </if>
+      <if test="ifReview != null">
+        IF_REVIEW,
+      </if>
+      <if test="dkLoanId != null">
+        DK_LOAN_ID,
+      </if>
+      <if test="clcMthFlg != null">
+        CLC_MTH_FLG,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="loanDetailId != null">
+        #{loanDetailId,jdbcType=VARCHAR},
+      </if>
+      <if test="productCd != null">
+        #{productCd,jdbcType=VARCHAR},
+      </if>
+      <if test="loanAmt != null">
+        #{loanAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="currencyCd != null">
+        #{currencyCd,jdbcType=VARCHAR},
+      </if>
+      <if test="term != null">
+        #{term,jdbcType=DECIMAL},
+      </if>
+      <if test="cycleUnit != null">
+        #{cycleUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="expirationDate != null">
+        #{expirationDate,jdbcType=DATE},
+      </if>
+      <if test="startDate != null">
+        #{startDate,jdbcType=DATE},
+      </if>
+      <if test="loanInfoId != null">
+        #{loanInfoId,jdbcType=VARCHAR},
+      </if>
+      <if test="sendStatusCd != null">
+        #{sendStatusCd,jdbcType=VARCHAR},
+      </if>
+      <if test="repaymentType != null">
+        #{repaymentType,jdbcType=VARCHAR},
+      </if>
+      <if test="ifTrusteeToPay != null">
+        #{ifTrusteeToPay,jdbcType=VARCHAR},
+      </if>
+      <if test="contractDetailId != null">
+        #{contractDetailId,jdbcType=VARCHAR},
+      </if>
+      <if test="loanDetailStatusCd != null">
+        #{loanDetailStatusCd,jdbcType=VARCHAR},
+      </if>
+      <if test="partyId != null">
+        #{partyId,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="payoutWayCd != null">
+        #{payoutWayCd,jdbcType=VARCHAR},
+      </if>
+      <if test="broadCycle != null">
+        #{broadCycle,jdbcType=INTEGER},
+      </if>
+      <if test="extendTermUnitCd != null">
+        #{extendTermUnitCd,jdbcType=VARCHAR},
+      </if>
+      <if test="cycleInd != null">
+        #{cycleInd,jdbcType=VARCHAR},
+      </if>
+      <if test="whetherExamAppMoneyRequire != null">
+        #{whetherExamAppMoneyRequire,jdbcType=VARCHAR},
+      </if>
+      <if test="examAppMoneyRequire != null">
+        #{examAppMoneyRequire,jdbcType=VARCHAR},
+      </if>
+      <if test="settlementWay != null">
+        #{settlementWay,jdbcType=VARCHAR},
+      </if>
+      <if test="arrangeAotslypayMoney != null">
+        #{arrangeAotslypayMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="meritLiftpayMoney != null">
+        #{meritLiftpayMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="arrangeLiftpayMoney != null">
+        #{arrangeLiftpayMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="outAccountOrg != null">
+        #{outAccountOrg,jdbcType=VARCHAR},
+      </if>
+      <if test="loanApplyNo != null">
+        #{loanApplyNo,jdbcType=VARCHAR},
+      </if>
+      <if test="creditUseAddress != null">
+        #{creditUseAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="distributeType != null">
+        #{distributeType,jdbcType=VARCHAR},
+      </if>
+      <if test="userNum != null">
+        #{userNum,jdbcType=VARCHAR},
+      </if>
+      <if test="orgNum != null">
+        #{orgNum,jdbcType=VARCHAR},
+      </if>
+      <if test="handlingDate != null">
+        #{handlingDate,jdbcType=DATE},
+      </if>
+      <if test="accountingOrg != null">
+        #{accountingOrg,jdbcType=VARCHAR},
+      </if>
+      <if test="category != null">
+        #{category,jdbcType=VARCHAR},
+      </if>
+      <if test="loanBelong != null">
+        #{loanBelong,jdbcType=VARCHAR},
+      </if>
+      <if test="lendAccount != null">
+        #{lendAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="repaymentAccount != null">
+        #{repaymentAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="interestRepaymentAccount != null">
+        #{interestRepaymentAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="loanQuasiOdd != null">
+        #{loanQuasiOdd,jdbcType=VARCHAR},
+      </if>
+      <if test="ditchMark != null">
+        #{ditchMark,jdbcType=VARCHAR},
+      </if>
+      <if test="loanUse != null">
+        #{loanUse,jdbcType=VARCHAR},
+      </if>
+      <if test="creditCardPaynum != null">
+        #{creditCardPaynum,jdbcType=VARCHAR},
+      </if>
+      <if test="startIntrestDate != null">
+        #{startIntrestDate,jdbcType=DATE},
+      </if>
+      <if test="autoReplayPlan != null">
+        #{autoReplayPlan,jdbcType=VARCHAR},
+      </if>
+      <if test="definReplayPlan != null">
+        #{definReplayPlan,jdbcType=VARCHAR},
+      </if>
+      <if test="lendTorepayPaynum != null">
+        #{lendTorepayPaynum,jdbcType=VARCHAR},
+      </if>
+      <if test="payoutCancelReason != null">
+        #{payoutCancelReason,jdbcType=VARCHAR},
+      </if>
+      <if test="productT24 != null">
+        #{productT24,jdbcType=VARCHAR},
+      </if>
+      <if test="loantoT24 != null">
+        #{loantoT24,jdbcType=VARCHAR},
+      </if>
+      <if test="suretyMode != null">
+        #{suretyMode,jdbcType=VARCHAR},
+      </if>
+      <if test="befOrBack != null">
+        #{befOrBack,jdbcType=VARCHAR},
+      </if>
+      <if test="basicDate != null">
+        #{basicDate,jdbcType=VARCHAR},
+      </if>
+      <if test="loanApplyKind != null">
+        #{loanApplyKind,jdbcType=VARCHAR},
+      </if>
+      <if test="scfLoanId != null">
+        #{scfLoanId,jdbcType=VARCHAR},
+      </if>
+      <if test="bmsLoanId != null">
+        #{bmsLoanId,jdbcType=VARCHAR},
+      </if>
+      <if test="camsLoanId != null">
+        #{camsLoanId,jdbcType=VARCHAR},
+      </if>
+      <if test="transSeqNo != null">
+        #{transSeqNo,jdbcType=VARCHAR},
+      </if>
+      <if test="loanUpdateFlag != null">
+        #{loanUpdateFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="prinMovement != null">
+        #{prinMovement,jdbcType=DECIMAL},
+      </if>
+      <if test="movementDt != null">
+        #{movementDt,jdbcType=DATE},
+      </if>
+      <if test="oldLoanId != null">
+        #{oldLoanId,jdbcType=VARCHAR},
+      </if>
+      <if test="upReason != null">
+        #{upReason,jdbcType=VARCHAR},
+      </if>
+      <if test="creNum != null">
+        #{creNum,jdbcType=VARCHAR},
+      </if>
+      <if test="bankTransNo != null">
+        #{bankTransNo,jdbcType=VARCHAR},
+      </if>
+      <if test="reverseFlag != null">
+        #{reverseFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="borrowStatusCd != null">
+        #{borrowStatusCd,jdbcType=VARCHAR},
+      </if>
+      <if test="payType != null">
+        #{payType,jdbcType=VARCHAR},
+      </if>
+      <if test="approveCurrencyCd != null">
+        #{approveCurrencyCd,jdbcType=VARCHAR},
+      </if>
+      <if test="applyid != null">
+        #{applyid,jdbcType=VARCHAR},
+      </if>
+      <if test="applyname != null">
+        #{applyname,jdbcType=VARCHAR},
+      </if>
+      <if test="applyorg != null">
+        #{applyorg,jdbcType=VARCHAR},
+      </if>
+      <if test="appRenewFrontMark != null">
+        #{appRenewFrontMark,jdbcType=VARCHAR},
+      </if>
+      <if test="capitalposition != null">
+        #{capitalposition,jdbcType=VARCHAR},
+      </if>
+      <if test="isRefinance != null">
+        #{isRefinance,jdbcType=VARCHAR},
+      </if>
+      <if test="childProductType != null">
+        #{childProductType,jdbcType=VARCHAR},
+      </if>
+      <if test="isPattern != null">
+        #{isPattern,jdbcType=VARCHAR},
+      </if>
+      <if test="txbkLoanId != null">
+        #{txbkLoanId,jdbcType=VARCHAR},
+      </if>
+      <if test="isSpecial != null">
+        #{isSpecial,jdbcType=VARCHAR},
+      </if>
+      <if test="isFinancialLoan != null">
+        #{isFinancialLoan,jdbcType=VARCHAR},
+      </if>
+      <if test="financialLoanOpponent != null">
+        #{financialLoanOpponent,jdbcType=VARCHAR},
+      </if>
+      <if test="isSeal != null">
+        #{isSeal,jdbcType=VARCHAR},
+      </if>
+      <if test="supplementInd != null">
+        #{supplementInd,jdbcType=VARCHAR},
+      </if>
+      <if test="supplementAmt != null">
+        #{supplementAmt,jdbcType=VARCHAR},
+      </if>
+      <if test="tbList != null">
+        #{tbList,jdbcType=VARCHAR},
+      </if>
+      <if test="exSupplementInd != null">
+        #{exSupplementInd,jdbcType=VARCHAR},
+      </if>
+      <if test="loanTurn2017 != null">
+        #{loanTurn2017,jdbcType=VARCHAR},
+      </if>
+      <if test="isPassSppi != null">
+        #{isPassSppi,jdbcType=VARCHAR},
+      </if>
+      <if test="businessType != null">
+        #{businessType,jdbcType=VARCHAR},
+      </if>
+      <if test="threeCategories != null">
+        #{threeCategories,jdbcType=VARCHAR},
+      </if>
+      <if test="ifReview != null">
+        #{ifReview,jdbcType=VARCHAR},
+      </if>
+      <if test="dkLoanId != null">
+        #{dkLoanId,jdbcType=VARCHAR},
+      </if>
+      <if test="clcMthFlg != null">
+        #{clcMthFlg,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.csdn.pojo.TbLoanDetail">
+    update tb_loan_detail
+    <set>
+      <if test="productCd != null">
+        product_cd = #{productCd,jdbcType=VARCHAR},
+      </if>
+      <if test="loanAmt != null">
+        loan_amt = #{loanAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="currencyCd != null">
+        currency_cd = #{currencyCd,jdbcType=VARCHAR},
+      </if>
+      <if test="term != null">
+        term = #{term,jdbcType=DECIMAL},
+      </if>
+      <if test="cycleUnit != null">
+        cycle_unit = #{cycleUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="expirationDate != null">
+        expiration_date = #{expirationDate,jdbcType=DATE},
+      </if>
+      <if test="startDate != null">
+        start_date = #{startDate,jdbcType=DATE},
+      </if>
+      <if test="loanInfoId != null">
+        loan_info_id = #{loanInfoId,jdbcType=VARCHAR},
+      </if>
+      <if test="sendStatusCd != null">
+        send_status_cd = #{sendStatusCd,jdbcType=VARCHAR},
+      </if>
+      <if test="repaymentType != null">
+        repayment_type = #{repaymentType,jdbcType=VARCHAR},
+      </if>
+      <if test="ifTrusteeToPay != null">
+        if_trustee_to_pay = #{ifTrusteeToPay,jdbcType=VARCHAR},
+      </if>
+      <if test="contractDetailId != null">
+        contract_detail_id = #{contractDetailId,jdbcType=VARCHAR},
+      </if>
+      <if test="loanDetailStatusCd != null">
+        loan_detail_status_cd = #{loanDetailStatusCd,jdbcType=VARCHAR},
+      </if>
+      <if test="partyId != null">
+        party_id = #{partyId,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="payoutWayCd != null">
+        payout_way_cd = #{payoutWayCd,jdbcType=VARCHAR},
+      </if>
+      <if test="broadCycle != null">
+        broad_cycle = #{broadCycle,jdbcType=INTEGER},
+      </if>
+      <if test="extendTermUnitCd != null">
+        extend_term_unit_cd = #{extendTermUnitCd,jdbcType=VARCHAR},
+      </if>
+      <if test="cycleInd != null">
+        cycle_ind = #{cycleInd,jdbcType=VARCHAR},
+      </if>
+      <if test="whetherExamAppMoneyRequire != null">
+        whether_exam_app_money_require = #{whetherExamAppMoneyRequire,jdbcType=VARCHAR},
+      </if>
+      <if test="examAppMoneyRequire != null">
+        exam_app_money_require = #{examAppMoneyRequire,jdbcType=VARCHAR},
+      </if>
+      <if test="settlementWay != null">
+        settlement_way = #{settlementWay,jdbcType=VARCHAR},
+      </if>
+      <if test="arrangeAotslypayMoney != null">
+        arrange_aotslypay_money = #{arrangeAotslypayMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="meritLiftpayMoney != null">
+        merit_liftpay_money = #{meritLiftpayMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="arrangeLiftpayMoney != null">
+        arrange_liftpay_money = #{arrangeLiftpayMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="outAccountOrg != null">
+        out_account_org = #{outAccountOrg,jdbcType=VARCHAR},
+      </if>
+      <if test="loanApplyNo != null">
+        loan_apply_no = #{loanApplyNo,jdbcType=VARCHAR},
+      </if>
+      <if test="creditUseAddress != null">
+        credit_use_address = #{creditUseAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="distributeType != null">
+        distribute_type = #{distributeType,jdbcType=VARCHAR},
+      </if>
+      <if test="userNum != null">
+        user_num = #{userNum,jdbcType=VARCHAR},
+      </if>
+      <if test="orgNum != null">
+        org_num = #{orgNum,jdbcType=VARCHAR},
+      </if>
+      <if test="handlingDate != null">
+        handling_date = #{handlingDate,jdbcType=DATE},
+      </if>
+      <if test="accountingOrg != null">
+        accounting_org = #{accountingOrg,jdbcType=VARCHAR},
+      </if>
+      <if test="category != null">
+        category = #{category,jdbcType=VARCHAR},
+      </if>
+      <if test="loanBelong != null">
+        loan_belong = #{loanBelong,jdbcType=VARCHAR},
+      </if>
+      <if test="lendAccount != null">
+        lend_account = #{lendAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="repaymentAccount != null">
+        repayment_account = #{repaymentAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="interestRepaymentAccount != null">
+        interest_repayment_account = #{interestRepaymentAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="loanQuasiOdd != null">
+        loan_quasi_odd = #{loanQuasiOdd,jdbcType=VARCHAR},
+      </if>
+      <if test="ditchMark != null">
+        ditch_mark = #{ditchMark,jdbcType=VARCHAR},
+      </if>
+      <if test="loanUse != null">
+        loan_use = #{loanUse,jdbcType=VARCHAR},
+      </if>
+      <if test="creditCardPaynum != null">
+        credit_card_paynum = #{creditCardPaynum,jdbcType=VARCHAR},
+      </if>
+      <if test="startIntrestDate != null">
+        start_intrest_date = #{startIntrestDate,jdbcType=DATE},
+      </if>
+      <if test="autoReplayPlan != null">
+        auto_replay_plan = #{autoReplayPlan,jdbcType=VARCHAR},
+      </if>
+      <if test="definReplayPlan != null">
+        defin_replay_plan = #{definReplayPlan,jdbcType=VARCHAR},
+      </if>
+      <if test="lendTorepayPaynum != null">
+        lend_torepay_paynum = #{lendTorepayPaynum,jdbcType=VARCHAR},
+      </if>
+      <if test="payoutCancelReason != null">
+        payout_cancel_reason = #{payoutCancelReason,jdbcType=VARCHAR},
+      </if>
+      <if test="productT24 != null">
+        product_t24 = #{productT24,jdbcType=VARCHAR},
+      </if>
+      <if test="loantoT24 != null">
+        loanto_t24 = #{loantoT24,jdbcType=VARCHAR},
+      </if>
+      <if test="suretyMode != null">
+        surety_mode = #{suretyMode,jdbcType=VARCHAR},
+      </if>
+      <if test="befOrBack != null">
+        bef_or_back = #{befOrBack,jdbcType=VARCHAR},
+      </if>
+      <if test="basicDate != null">
+        basic_date = #{basicDate,jdbcType=VARCHAR},
+      </if>
+      <if test="loanApplyKind != null">
+        loan_apply_kind = #{loanApplyKind,jdbcType=VARCHAR},
+      </if>
+      <if test="scfLoanId != null">
+        scf_loan_id = #{scfLoanId,jdbcType=VARCHAR},
+      </if>
+      <if test="bmsLoanId != null">
+        bms_loan_id = #{bmsLoanId,jdbcType=VARCHAR},
+      </if>
+      <if test="camsLoanId != null">
+        cams_loan_id = #{camsLoanId,jdbcType=VARCHAR},
+      </if>
+      <if test="transSeqNo != null">
+        trans_seq_no = #{transSeqNo,jdbcType=VARCHAR},
+      </if>
+      <if test="loanUpdateFlag != null">
+        loan_update_flag = #{loanUpdateFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="prinMovement != null">
+        prin_movement = #{prinMovement,jdbcType=DECIMAL},
+      </if>
+      <if test="movementDt != null">
+        movement_dt = #{movementDt,jdbcType=DATE},
+      </if>
+      <if test="oldLoanId != null">
+        old_loan_id = #{oldLoanId,jdbcType=VARCHAR},
+      </if>
+      <if test="upReason != null">
+        up_reason = #{upReason,jdbcType=VARCHAR},
+      </if>
+      <if test="creNum != null">
+        cre_num = #{creNum,jdbcType=VARCHAR},
+      </if>
+      <if test="bankTransNo != null">
+        bank_trans_no = #{bankTransNo,jdbcType=VARCHAR},
+      </if>
+      <if test="reverseFlag != null">
+        reverse_flag = #{reverseFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="borrowStatusCd != null">
+        borrow_status_cd = #{borrowStatusCd,jdbcType=VARCHAR},
+      </if>
+      <if test="payType != null">
+        pay_type = #{payType,jdbcType=VARCHAR},
+      </if>
+      <if test="approveCurrencyCd != null">
+        approve_currency_cd = #{approveCurrencyCd,jdbcType=VARCHAR},
+      </if>
+      <if test="applyid != null">
+        ApplyId = #{applyid,jdbcType=VARCHAR},
+      </if>
+      <if test="applyname != null">
+        ApplyName = #{applyname,jdbcType=VARCHAR},
+      </if>
+      <if test="applyorg != null">
+        ApplyOrg = #{applyorg,jdbcType=VARCHAR},
+      </if>
+      <if test="appRenewFrontMark != null">
+        app_renew_front_mark = #{appRenewFrontMark,jdbcType=VARCHAR},
+      </if>
+      <if test="capitalposition != null">
+        capitalPosition = #{capitalposition,jdbcType=VARCHAR},
+      </if>
+      <if test="isRefinance != null">
+        IS_REFINANCE = #{isRefinance,jdbcType=VARCHAR},
+      </if>
+      <if test="childProductType != null">
+        CHILD_PRODUCT_TYPE = #{childProductType,jdbcType=VARCHAR},
+      </if>
+      <if test="isPattern != null">
+        IS_PATTERN = #{isPattern,jdbcType=VARCHAR},
+      </if>
+      <if test="txbkLoanId != null">
+        TXBK_LOAN_ID = #{txbkLoanId,jdbcType=VARCHAR},
+      </if>
+      <if test="isSpecial != null">
+        IS_SPECIAL = #{isSpecial,jdbcType=VARCHAR},
+      </if>
+      <if test="isFinancialLoan != null">
+        IS_FINANCIAL_LOAN = #{isFinancialLoan,jdbcType=VARCHAR},
+      </if>
+      <if test="financialLoanOpponent != null">
+        FINANCIAL_LOAN_OPPONENT = #{financialLoanOpponent,jdbcType=VARCHAR},
+      </if>
+      <if test="isSeal != null">
+        IS_SEAL = #{isSeal,jdbcType=VARCHAR},
+      </if>
+      <if test="supplementInd != null">
+        SUPPLEMENT_IND = #{supplementInd,jdbcType=VARCHAR},
+      </if>
+      <if test="supplementAmt != null">
+        SUPPLEMENT_AMT = #{supplementAmt,jdbcType=VARCHAR},
+      </if>
+      <if test="tbList != null">
+        TB_LIST = #{tbList,jdbcType=VARCHAR},
+      </if>
+      <if test="exSupplementInd != null">
+        EX_SUPPLEMENT_IND = #{exSupplementInd,jdbcType=VARCHAR},
+      </if>
+      <if test="loanTurn2017 != null">
+        LOAN_TURN_2017 = #{loanTurn2017,jdbcType=VARCHAR},
+      </if>
+      <if test="isPassSppi != null">
+        IS_PASS_SPPI = #{isPassSppi,jdbcType=VARCHAR},
+      </if>
+      <if test="businessType != null">
+        BUSINESS_TYPE = #{businessType,jdbcType=VARCHAR},
+      </if>
+      <if test="threeCategories != null">
+        THREE_CATEGORIES = #{threeCategories,jdbcType=VARCHAR},
+      </if>
+      <if test="ifReview != null">
+        IF_REVIEW = #{ifReview,jdbcType=VARCHAR},
+      </if>
+      <if test="dkLoanId != null">
+        DK_LOAN_ID = #{dkLoanId,jdbcType=VARCHAR},
+      </if>
+      <if test="clcMthFlg != null">
+        CLC_MTH_FLG = #{clcMthFlg,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where loan_detail_id = #{loanDetailId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.csdn.pojo.TbLoanDetail">
+    update tb_loan_detail
+    set product_cd = #{productCd,jdbcType=VARCHAR},
+      loan_amt = #{loanAmt,jdbcType=DECIMAL},
+      currency_cd = #{currencyCd,jdbcType=VARCHAR},
+      term = #{term,jdbcType=DECIMAL},
+      cycle_unit = #{cycleUnit,jdbcType=VARCHAR},
+      expiration_date = #{expirationDate,jdbcType=DATE},
+      start_date = #{startDate,jdbcType=DATE},
+      loan_info_id = #{loanInfoId,jdbcType=VARCHAR},
+      send_status_cd = #{sendStatusCd,jdbcType=VARCHAR},
+      repayment_type = #{repaymentType,jdbcType=VARCHAR},
+      if_trustee_to_pay = #{ifTrusteeToPay,jdbcType=VARCHAR},
+      contract_detail_id = #{contractDetailId,jdbcType=VARCHAR},
+      loan_detail_status_cd = #{loanDetailStatusCd,jdbcType=VARCHAR},
+      party_id = #{partyId,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      payout_way_cd = #{payoutWayCd,jdbcType=VARCHAR},
+      broad_cycle = #{broadCycle,jdbcType=INTEGER},
+      extend_term_unit_cd = #{extendTermUnitCd,jdbcType=VARCHAR},
+      cycle_ind = #{cycleInd,jdbcType=VARCHAR},
+      whether_exam_app_money_require = #{whetherExamAppMoneyRequire,jdbcType=VARCHAR},
+      exam_app_money_require = #{examAppMoneyRequire,jdbcType=VARCHAR},
+      settlement_way = #{settlementWay,jdbcType=VARCHAR},
+      arrange_aotslypay_money = #{arrangeAotslypayMoney,jdbcType=DECIMAL},
+      merit_liftpay_money = #{meritLiftpayMoney,jdbcType=DECIMAL},
+      arrange_liftpay_money = #{arrangeLiftpayMoney,jdbcType=DECIMAL},
+      out_account_org = #{outAccountOrg,jdbcType=VARCHAR},
+      loan_apply_no = #{loanApplyNo,jdbcType=VARCHAR},
+      credit_use_address = #{creditUseAddress,jdbcType=VARCHAR},
+      distribute_type = #{distributeType,jdbcType=VARCHAR},
+      user_num = #{userNum,jdbcType=VARCHAR},
+      org_num = #{orgNum,jdbcType=VARCHAR},
+      handling_date = #{handlingDate,jdbcType=DATE},
+      accounting_org = #{accountingOrg,jdbcType=VARCHAR},
+      category = #{category,jdbcType=VARCHAR},
+      loan_belong = #{loanBelong,jdbcType=VARCHAR},
+      lend_account = #{lendAccount,jdbcType=VARCHAR},
+      repayment_account = #{repaymentAccount,jdbcType=VARCHAR},
+      interest_repayment_account = #{interestRepaymentAccount,jdbcType=VARCHAR},
+      loan_quasi_odd = #{loanQuasiOdd,jdbcType=VARCHAR},
+      ditch_mark = #{ditchMark,jdbcType=VARCHAR},
+      loan_use = #{loanUse,jdbcType=VARCHAR},
+      credit_card_paynum = #{creditCardPaynum,jdbcType=VARCHAR},
+      start_intrest_date = #{startIntrestDate,jdbcType=DATE},
+      auto_replay_plan = #{autoReplayPlan,jdbcType=VARCHAR},
+      defin_replay_plan = #{definReplayPlan,jdbcType=VARCHAR},
+      lend_torepay_paynum = #{lendTorepayPaynum,jdbcType=VARCHAR},
+      payout_cancel_reason = #{payoutCancelReason,jdbcType=VARCHAR},
+      product_t24 = #{productT24,jdbcType=VARCHAR},
+      loanto_t24 = #{loantoT24,jdbcType=VARCHAR},
+      surety_mode = #{suretyMode,jdbcType=VARCHAR},
+      bef_or_back = #{befOrBack,jdbcType=VARCHAR},
+      basic_date = #{basicDate,jdbcType=VARCHAR},
+      loan_apply_kind = #{loanApplyKind,jdbcType=VARCHAR},
+      scf_loan_id = #{scfLoanId,jdbcType=VARCHAR},
+      bms_loan_id = #{bmsLoanId,jdbcType=VARCHAR},
+      cams_loan_id = #{camsLoanId,jdbcType=VARCHAR},
+      trans_seq_no = #{transSeqNo,jdbcType=VARCHAR},
+      loan_update_flag = #{loanUpdateFlag,jdbcType=VARCHAR},
+      prin_movement = #{prinMovement,jdbcType=DECIMAL},
+      movement_dt = #{movementDt,jdbcType=DATE},
+      old_loan_id = #{oldLoanId,jdbcType=VARCHAR},
+      up_reason = #{upReason,jdbcType=VARCHAR},
+      cre_num = #{creNum,jdbcType=VARCHAR},
+      bank_trans_no = #{bankTransNo,jdbcType=VARCHAR},
+      reverse_flag = #{reverseFlag,jdbcType=VARCHAR},
+      borrow_status_cd = #{borrowStatusCd,jdbcType=VARCHAR},
+      pay_type = #{payType,jdbcType=VARCHAR},
+      approve_currency_cd = #{approveCurrencyCd,jdbcType=VARCHAR},
+      ApplyId = #{applyid,jdbcType=VARCHAR},
+      ApplyName = #{applyname,jdbcType=VARCHAR},
+      ApplyOrg = #{applyorg,jdbcType=VARCHAR},
+      app_renew_front_mark = #{appRenewFrontMark,jdbcType=VARCHAR},
+      capitalPosition = #{capitalposition,jdbcType=VARCHAR},
+      IS_REFINANCE = #{isRefinance,jdbcType=VARCHAR},
+      CHILD_PRODUCT_TYPE = #{childProductType,jdbcType=VARCHAR},
+      IS_PATTERN = #{isPattern,jdbcType=VARCHAR},
+      TXBK_LOAN_ID = #{txbkLoanId,jdbcType=VARCHAR},
+      IS_SPECIAL = #{isSpecial,jdbcType=VARCHAR},
+      IS_FINANCIAL_LOAN = #{isFinancialLoan,jdbcType=VARCHAR},
+      FINANCIAL_LOAN_OPPONENT = #{financialLoanOpponent,jdbcType=VARCHAR},
+      IS_SEAL = #{isSeal,jdbcType=VARCHAR},
+      SUPPLEMENT_IND = #{supplementInd,jdbcType=VARCHAR},
+      SUPPLEMENT_AMT = #{supplementAmt,jdbcType=VARCHAR},
+      TB_LIST = #{tbList,jdbcType=VARCHAR},
+      EX_SUPPLEMENT_IND = #{exSupplementInd,jdbcType=VARCHAR},
+      LOAN_TURN_2017 = #{loanTurn2017,jdbcType=VARCHAR},
+      IS_PASS_SPPI = #{isPassSppi,jdbcType=VARCHAR},
+      BUSINESS_TYPE = #{businessType,jdbcType=VARCHAR},
+      THREE_CATEGORIES = #{threeCategories,jdbcType=VARCHAR},
+      IF_REVIEW = #{ifReview,jdbcType=VARCHAR},
+      DK_LOAN_ID = #{dkLoanId,jdbcType=VARCHAR},
+      CLC_MTH_FLG = #{clcMthFlg,jdbcType=VARCHAR}
+    where loan_detail_id = #{loanDetailId,jdbcType=VARCHAR}
+  </update>
+</mapper>

@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.csdn.mapper.TbLoanIntRateMapper">
+  <resultMap id="BaseResultMap" type="cn.csdn.pojo.TbLoanIntRate">
+    <id column="LOAN_INT_RATE_ID" jdbcType="VARCHAR" property="loanIntRateId" />
+    <result column="LOAN_DETAIL_ID" jdbcType="VARCHAR" property="loanDetailId" />
+    <result column="RATE_TYPE" jdbcType="VARCHAR" property="rateType" />
+    <result column="RATE_BASIS_TYPE" jdbcType="VARCHAR" property="rateBasisType" />
+    <result column="RATE_LEVEL" jdbcType="VARCHAR" property="rateLevel" />
+    <result column="RATE_FLOAT_TYPE" jdbcType="VARCHAR" property="rateFloatType" />
+    <result column="RATE_FLOAT_MODEL" jdbcType="VARCHAR" property="rateFloatModel" />
+    <result column="RATE_FLOAT_PROPORTION" jdbcType="DECIMAL" property="rateFloatProportion" />
+    <result column="INTEREST_TAKING_TYPE" jdbcType="VARCHAR" property="interestTakingType" />
+    <result column="OVERDUE_RATE_UP_PROPORTION" jdbcType="DECIMAL" property="overdueRateUpProportion" />
+    <result column="EMBEZZLE_FLOATUP_PROPORTION" jdbcType="DECIMAL" property="embezzleFloatupProportion" />
+    <result column="YEAR_RATE" jdbcType="DECIMAL" property="yearRate" />
+    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="IR_BASICS" jdbcType="VARCHAR" property="irBasics" />
+    <result column="IS_CHANGE_RATE" jdbcType="VARCHAR" property="isChangeRate" />
+    <result column="INTEREST_COLLECT_TYPE" jdbcType="VARCHAR" property="interestCollectType" />
+    <result column="BASE_RATE_KEY" jdbcType="VARCHAR" property="baseRateKey" />
+    <result column="BASE_RATE_VALUE" jdbcType="DECIMAL" property="baseRateValue" />
+    <result column="IR_UPDATE_FREQUENCY" jdbcType="VARCHAR" property="irUpdateFrequency" />
+    <result column="IR_CHANGE_TYPE" jdbcType="VARCHAR" property="irChangeType" />
+    <result column="PS_RATE" jdbcType="VARCHAR" property="psRate" />
+    <result column="PE_RATE" jdbcType="VARCHAR" property="peRate" />
+    <result column="SPREAD_V_DATE" jdbcType="DATE" property="spreadVDate" />
+    <result column="INT_RATE_V_DATE" jdbcType="DATE" property="intRateVDate" />
+    <result column="RATE_FLOATING_FREQUENCY" jdbcType="VARCHAR" property="rateFloatingFrequency" />
+    <result column="LAST_CHG_DATE" jdbcType="DATE" property="lastChgDate" />
+    <result column="OTHER_RATE_AGREEMENT" jdbcType="VARCHAR" property="otherRateAgreement" />
+    <result column="PERIOR_RATE_UPDATE_DATE" jdbcType="DATE" property="periorRateUpdateDate" />
+    <result column="SETTLEMENT_FREQUENCY" jdbcType="VARCHAR" property="settlementFrequency" />
+    <result column="NEW_YEAR_RATE" jdbcType="DECIMAL" property="newYearRate" />
+    <result column="RATE_FLOAT_MEMBER" jdbcType="DECIMAL" property="rateFloatMember" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    LOAN_INT_RATE_ID, LOAN_DETAIL_ID, RATE_TYPE, RATE_BASIS_TYPE, RATE_LEVEL, RATE_FLOAT_TYPE, 
+    RATE_FLOAT_MODEL, RATE_FLOAT_PROPORTION, INTEREST_TAKING_TYPE, OVERDUE_RATE_UP_PROPORTION, 
+    EMBEZZLE_FLOATUP_PROPORTION, YEAR_RATE, CREATE_TIME, UPDATE_TIME, IR_BASICS, IS_CHANGE_RATE, 
+    INTEREST_COLLECT_TYPE, BASE_RATE_KEY, BASE_RATE_VALUE, IR_UPDATE_FREQUENCY, IR_CHANGE_TYPE, 
+    PS_RATE, PE_RATE, SPREAD_V_DATE, INT_RATE_V_DATE, RATE_FLOATING_FREQUENCY, LAST_CHG_DATE, 
+    OTHER_RATE_AGREEMENT, PERIOR_RATE_UPDATE_DATE, SETTLEMENT_FREQUENCY, NEW_YEAR_RATE, 
+    RATE_FLOAT_MEMBER
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tb_loan_int_rate
+    where LOAN_INT_RATE_ID = #{loanIntRateId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from tb_loan_int_rate
+    where LOAN_INT_RATE_ID = #{loanIntRateId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="cn.csdn.pojo.TbLoanIntRate">
+    insert into tb_loan_int_rate (LOAN_INT_RATE_ID, LOAN_DETAIL_ID, RATE_TYPE, 
+      RATE_BASIS_TYPE, RATE_LEVEL, RATE_FLOAT_TYPE, 
+      RATE_FLOAT_MODEL, RATE_FLOAT_PROPORTION, INTEREST_TAKING_TYPE, 
+      OVERDUE_RATE_UP_PROPORTION, EMBEZZLE_FLOATUP_PROPORTION, 
+      YEAR_RATE, CREATE_TIME, UPDATE_TIME, 
+      IR_BASICS, IS_CHANGE_RATE, INTEREST_COLLECT_TYPE, 
+      BASE_RATE_KEY, BASE_RATE_VALUE, IR_UPDATE_FREQUENCY, 
+      IR_CHANGE_TYPE, PS_RATE, PE_RATE, 
+      SPREAD_V_DATE, INT_RATE_V_DATE, RATE_FLOATING_FREQUENCY, 
+      LAST_CHG_DATE, OTHER_RATE_AGREEMENT, PERIOR_RATE_UPDATE_DATE, 
+      SETTLEMENT_FREQUENCY, NEW_YEAR_RATE, RATE_FLOAT_MEMBER
+      )
+    values (#{loanIntRateId,jdbcType=VARCHAR}, #{loanDetailId,jdbcType=VARCHAR}, #{rateType,jdbcType=VARCHAR}, 
+      #{rateBasisType,jdbcType=VARCHAR}, #{rateLevel,jdbcType=VARCHAR}, #{rateFloatType,jdbcType=VARCHAR}, 
+      #{rateFloatModel,jdbcType=VARCHAR}, #{rateFloatProportion,jdbcType=DECIMAL}, #{interestTakingType,jdbcType=VARCHAR}, 
+      #{overdueRateUpProportion,jdbcType=DECIMAL}, #{embezzleFloatupProportion,jdbcType=DECIMAL}, 
+      #{yearRate,jdbcType=DECIMAL}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{irBasics,jdbcType=VARCHAR}, #{isChangeRate,jdbcType=VARCHAR}, #{interestCollectType,jdbcType=VARCHAR}, 
+      #{baseRateKey,jdbcType=VARCHAR}, #{baseRateValue,jdbcType=DECIMAL}, #{irUpdateFrequency,jdbcType=VARCHAR}, 
+      #{irChangeType,jdbcType=VARCHAR}, #{psRate,jdbcType=VARCHAR}, #{peRate,jdbcType=VARCHAR}, 
+      #{spreadVDate,jdbcType=DATE}, #{intRateVDate,jdbcType=DATE}, #{rateFloatingFrequency,jdbcType=VARCHAR}, 
+      #{lastChgDate,jdbcType=DATE}, #{otherRateAgreement,jdbcType=VARCHAR}, #{periorRateUpdateDate,jdbcType=DATE}, 
+      #{settlementFrequency,jdbcType=VARCHAR}, #{newYearRate,jdbcType=DECIMAL}, #{rateFloatMember,jdbcType=DECIMAL}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="cn.csdn.pojo.TbLoanIntRate">
+    insert into tb_loan_int_rate
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="loanIntRateId != null">
+        LOAN_INT_RATE_ID,
+      </if>
+      <if test="loanDetailId != null">
+        LOAN_DETAIL_ID,
+      </if>
+      <if test="rateType != null">
+        RATE_TYPE,
+      </if>
+      <if test="rateBasisType != null">
+        RATE_BASIS_TYPE,
+      </if>
+      <if test="rateLevel != null">
+        RATE_LEVEL,
+      </if>
+      <if test="rateFloatType != null">
+        RATE_FLOAT_TYPE,
+      </if>
+      <if test="rateFloatModel != null">
+        RATE_FLOAT_MODEL,
+      </if>
+      <if test="rateFloatProportion != null">
+        RATE_FLOAT_PROPORTION,
+      </if>
+      <if test="interestTakingType != null">
+        INTEREST_TAKING_TYPE,
+      </if>
+      <if test="overdueRateUpProportion != null">
+        OVERDUE_RATE_UP_PROPORTION,
+      </if>
+      <if test="embezzleFloatupProportion != null">
+        EMBEZZLE_FLOATUP_PROPORTION,
+      </if>
+      <if test="yearRate != null">
+        YEAR_RATE,
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME,
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME,
+      </if>
+      <if test="irBasics != null">
+        IR_BASICS,
+      </if>
+      <if test="isChangeRate != null">
+        IS_CHANGE_RATE,
+      </if>
+      <if test="interestCollectType != null">
+        INTEREST_COLLECT_TYPE,
+      </if>
+      <if test="baseRateKey != null">
+        BASE_RATE_KEY,
+      </if>
+      <if test="baseRateValue != null">
+        BASE_RATE_VALUE,
+      </if>
+      <if test="irUpdateFrequency != null">
+        IR_UPDATE_FREQUENCY,
+      </if>
+      <if test="irChangeType != null">
+        IR_CHANGE_TYPE,
+      </if>
+      <if test="psRate != null">
+        PS_RATE,
+      </if>
+      <if test="peRate != null">
+        PE_RATE,
+      </if>
+      <if test="spreadVDate != null">
+        SPREAD_V_DATE,
+      </if>
+      <if test="intRateVDate != null">
+        INT_RATE_V_DATE,
+      </if>
+      <if test="rateFloatingFrequency != null">
+        RATE_FLOATING_FREQUENCY,
+      </if>
+      <if test="lastChgDate != null">
+        LAST_CHG_DATE,
+      </if>
+      <if test="otherRateAgreement != null">
+        OTHER_RATE_AGREEMENT,
+      </if>
+      <if test="periorRateUpdateDate != null">
+        PERIOR_RATE_UPDATE_DATE,
+      </if>
+      <if test="settlementFrequency != null">
+        SETTLEMENT_FREQUENCY,
+      </if>
+      <if test="newYearRate != null">
+        NEW_YEAR_RATE,
+      </if>
+      <if test="rateFloatMember != null">
+        RATE_FLOAT_MEMBER,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="loanIntRateId != null">
+        #{loanIntRateId,jdbcType=VARCHAR},
+      </if>
+      <if test="loanDetailId != null">
+        #{loanDetailId,jdbcType=VARCHAR},
+      </if>
+      <if test="rateType != null">
+        #{rateType,jdbcType=VARCHAR},
+      </if>
+      <if test="rateBasisType != null">
+        #{rateBasisType,jdbcType=VARCHAR},
+      </if>
+      <if test="rateLevel != null">
+        #{rateLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="rateFloatType != null">
+        #{rateFloatType,jdbcType=VARCHAR},
+      </if>
+      <if test="rateFloatModel != null">
+        #{rateFloatModel,jdbcType=VARCHAR},
+      </if>
+      <if test="rateFloatProportion != null">
+        #{rateFloatProportion,jdbcType=DECIMAL},
+      </if>
+      <if test="interestTakingType != null">
+        #{interestTakingType,jdbcType=VARCHAR},
+      </if>
+      <if test="overdueRateUpProportion != null">
+        #{overdueRateUpProportion,jdbcType=DECIMAL},
+      </if>
+      <if test="embezzleFloatupProportion != null">
+        #{embezzleFloatupProportion,jdbcType=DECIMAL},
+      </if>
+      <if test="yearRate != null">
+        #{yearRate,jdbcType=DECIMAL},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="irBasics != null">
+        #{irBasics,jdbcType=VARCHAR},
+      </if>
+      <if test="isChangeRate != null">
+        #{isChangeRate,jdbcType=VARCHAR},
+      </if>
+      <if test="interestCollectType != null">
+        #{interestCollectType,jdbcType=VARCHAR},
+      </if>
+      <if test="baseRateKey != null">
+        #{baseRateKey,jdbcType=VARCHAR},
+      </if>
+      <if test="baseRateValue != null">
+        #{baseRateValue,jdbcType=DECIMAL},
+      </if>
+      <if test="irUpdateFrequency != null">
+        #{irUpdateFrequency,jdbcType=VARCHAR},
+      </if>
+      <if test="irChangeType != null">
+        #{irChangeType,jdbcType=VARCHAR},
+      </if>
+      <if test="psRate != null">
+        #{psRate,jdbcType=VARCHAR},
+      </if>
+      <if test="peRate != null">
+        #{peRate,jdbcType=VARCHAR},
+      </if>
+      <if test="spreadVDate != null">
+        #{spreadVDate,jdbcType=DATE},
+      </if>
+      <if test="intRateVDate != null">
+        #{intRateVDate,jdbcType=DATE},
+      </if>
+      <if test="rateFloatingFrequency != null">
+        #{rateFloatingFrequency,jdbcType=VARCHAR},
+      </if>
+      <if test="lastChgDate != null">
+        #{lastChgDate,jdbcType=DATE},
+      </if>
+      <if test="otherRateAgreement != null">
+        #{otherRateAgreement,jdbcType=VARCHAR},
+      </if>
+      <if test="periorRateUpdateDate != null">
+        #{periorRateUpdateDate,jdbcType=DATE},
+      </if>
+      <if test="settlementFrequency != null">
+        #{settlementFrequency,jdbcType=VARCHAR},
+      </if>
+      <if test="newYearRate != null">
+        #{newYearRate,jdbcType=DECIMAL},
+      </if>
+      <if test="rateFloatMember != null">
+        #{rateFloatMember,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.csdn.pojo.TbLoanIntRate">
+    update tb_loan_int_rate
+    <set>
+      <if test="loanDetailId != null">
+        LOAN_DETAIL_ID = #{loanDetailId,jdbcType=VARCHAR},
+      </if>
+      <if test="rateType != null">
+        RATE_TYPE = #{rateType,jdbcType=VARCHAR},
+      </if>
+      <if test="rateBasisType != null">
+        RATE_BASIS_TYPE = #{rateBasisType,jdbcType=VARCHAR},
+      </if>
+      <if test="rateLevel != null">
+        RATE_LEVEL = #{rateLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="rateFloatType != null">
+        RATE_FLOAT_TYPE = #{rateFloatType,jdbcType=VARCHAR},
+      </if>
+      <if test="rateFloatModel != null">
+        RATE_FLOAT_MODEL = #{rateFloatModel,jdbcType=VARCHAR},
+      </if>
+      <if test="rateFloatProportion != null">
+        RATE_FLOAT_PROPORTION = #{rateFloatProportion,jdbcType=DECIMAL},
+      </if>
+      <if test="interestTakingType != null">
+        INTEREST_TAKING_TYPE = #{interestTakingType,jdbcType=VARCHAR},
+      </if>
+      <if test="overdueRateUpProportion != null">
+        OVERDUE_RATE_UP_PROPORTION = #{overdueRateUpProportion,jdbcType=DECIMAL},
+      </if>
+      <if test="embezzleFloatupProportion != null">
+        EMBEZZLE_FLOATUP_PROPORTION = #{embezzleFloatupProportion,jdbcType=DECIMAL},
+      </if>
+      <if test="yearRate != null">
+        YEAR_RATE = #{yearRate,jdbcType=DECIMAL},
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="irBasics != null">
+        IR_BASICS = #{irBasics,jdbcType=VARCHAR},
+      </if>
+      <if test="isChangeRate != null">
+        IS_CHANGE_RATE = #{isChangeRate,jdbcType=VARCHAR},
+      </if>
+      <if test="interestCollectType != null">
+        INTEREST_COLLECT_TYPE = #{interestCollectType,jdbcType=VARCHAR},
+      </if>
+      <if test="baseRateKey != null">
+        BASE_RATE_KEY = #{baseRateKey,jdbcType=VARCHAR},
+      </if>
+      <if test="baseRateValue != null">
+        BASE_RATE_VALUE = #{baseRateValue,jdbcType=DECIMAL},
+      </if>
+      <if test="irUpdateFrequency != null">
+        IR_UPDATE_FREQUENCY = #{irUpdateFrequency,jdbcType=VARCHAR},
+      </if>
+      <if test="irChangeType != null">
+        IR_CHANGE_TYPE = #{irChangeType,jdbcType=VARCHAR},
+      </if>
+      <if test="psRate != null">
+        PS_RATE = #{psRate,jdbcType=VARCHAR},
+      </if>
+      <if test="peRate != null">
+        PE_RATE = #{peRate,jdbcType=VARCHAR},
+      </if>
+      <if test="spreadVDate != null">
+        SPREAD_V_DATE = #{spreadVDate,jdbcType=DATE},
+      </if>
+      <if test="intRateVDate != null">
+        INT_RATE_V_DATE = #{intRateVDate,jdbcType=DATE},
+      </if>
+      <if test="rateFloatingFrequency != null">
+        RATE_FLOATING_FREQUENCY = #{rateFloatingFrequency,jdbcType=VARCHAR},
+      </if>
+      <if test="lastChgDate != null">
+        LAST_CHG_DATE = #{lastChgDate,jdbcType=DATE},
+      </if>
+      <if test="otherRateAgreement != null">
+        OTHER_RATE_AGREEMENT = #{otherRateAgreement,jdbcType=VARCHAR},
+      </if>
+      <if test="periorRateUpdateDate != null">
+        PERIOR_RATE_UPDATE_DATE = #{periorRateUpdateDate,jdbcType=DATE},
+      </if>
+      <if test="settlementFrequency != null">
+        SETTLEMENT_FREQUENCY = #{settlementFrequency,jdbcType=VARCHAR},
+      </if>
+      <if test="newYearRate != null">
+        NEW_YEAR_RATE = #{newYearRate,jdbcType=DECIMAL},
+      </if>
+      <if test="rateFloatMember != null">
+        RATE_FLOAT_MEMBER = #{rateFloatMember,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where LOAN_INT_RATE_ID = #{loanIntRateId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.csdn.pojo.TbLoanIntRate">
+    update tb_loan_int_rate
+    set LOAN_DETAIL_ID = #{loanDetailId,jdbcType=VARCHAR},
+      RATE_TYPE = #{rateType,jdbcType=VARCHAR},
+      RATE_BASIS_TYPE = #{rateBasisType,jdbcType=VARCHAR},
+      RATE_LEVEL = #{rateLevel,jdbcType=VARCHAR},
+      RATE_FLOAT_TYPE = #{rateFloatType,jdbcType=VARCHAR},
+      RATE_FLOAT_MODEL = #{rateFloatModel,jdbcType=VARCHAR},
+      RATE_FLOAT_PROPORTION = #{rateFloatProportion,jdbcType=DECIMAL},
+      INTEREST_TAKING_TYPE = #{interestTakingType,jdbcType=VARCHAR},
+      OVERDUE_RATE_UP_PROPORTION = #{overdueRateUpProportion,jdbcType=DECIMAL},
+      EMBEZZLE_FLOATUP_PROPORTION = #{embezzleFloatupProportion,jdbcType=DECIMAL},
+      YEAR_RATE = #{yearRate,jdbcType=DECIMAL},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      IR_BASICS = #{irBasics,jdbcType=VARCHAR},
+      IS_CHANGE_RATE = #{isChangeRate,jdbcType=VARCHAR},
+      INTEREST_COLLECT_TYPE = #{interestCollectType,jdbcType=VARCHAR},
+      BASE_RATE_KEY = #{baseRateKey,jdbcType=VARCHAR},
+      BASE_RATE_VALUE = #{baseRateValue,jdbcType=DECIMAL},
+      IR_UPDATE_FREQUENCY = #{irUpdateFrequency,jdbcType=VARCHAR},
+      IR_CHANGE_TYPE = #{irChangeType,jdbcType=VARCHAR},
+      PS_RATE = #{psRate,jdbcType=VARCHAR},
+      PE_RATE = #{peRate,jdbcType=VARCHAR},
+      SPREAD_V_DATE = #{spreadVDate,jdbcType=DATE},
+      INT_RATE_V_DATE = #{intRateVDate,jdbcType=DATE},
+      RATE_FLOATING_FREQUENCY = #{rateFloatingFrequency,jdbcType=VARCHAR},
+      LAST_CHG_DATE = #{lastChgDate,jdbcType=DATE},
+      OTHER_RATE_AGREEMENT = #{otherRateAgreement,jdbcType=VARCHAR},
+      PERIOR_RATE_UPDATE_DATE = #{periorRateUpdateDate,jdbcType=DATE},
+      SETTLEMENT_FREQUENCY = #{settlementFrequency,jdbcType=VARCHAR},
+      NEW_YEAR_RATE = #{newYearRate,jdbcType=DECIMAL},
+      RATE_FLOAT_MEMBER = #{rateFloatMember,jdbcType=DECIMAL}
+    where LOAN_INT_RATE_ID = #{loanIntRateId,jdbcType=VARCHAR}
+  </update>
+</mapper>

@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.csdn.mapper.SysMenuMapper">
+  <resultMap id="BaseResultMap" type="cn.csdn.pojo.SysMenu">
+    <id column="MENU_NUM" jdbcType="VARCHAR" property="menuNum" />
+    <result column="MENU_NAME" jdbcType="VARCHAR" property="menuName" />
+    <result column="FATHER_NUM" jdbcType="VARCHAR" property="fatherNum" />
+    <result column="ICON_NUM" jdbcType="VARCHAR" property="iconNum" />
+    <result column="MENU_LINE" jdbcType="VARCHAR" property="menuLine" />
+    <result column="MENU_TYPE" jdbcType="VARCHAR" property="menuType" />
+    <result column="OPEN_TYPE" jdbcType="VARCHAR" property="openType" />
+    <result column="MENU_ORDER" jdbcType="INTEGER" property="menuOrder" />
+    <result column="CREATE_NAME" jdbcType="VARCHAR" property="createName" />
+    <result column="CREATE_NUM" jdbcType="VARCHAR" property="createNum" />
+    <result column="UPDATE_NAME" jdbcType="VARCHAR" property="updateName" />
+    <result column="UPDATE_NUM" jdbcType="VARCHAR" property="updateNum" />
+    <result column="CREATE_TIME" jdbcType="DATE" property="createTime" />
+    <result column="UPDATE_TIME" jdbcType="DATE" property="updateTime" />
+    <result column="STATE" jdbcType="CHAR" property="state" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    MENU_NUM, MENU_NAME, FATHER_NUM, ICON_NUM, MENU_LINE, MENU_TYPE, OPEN_TYPE, MENU_ORDER, 
+    CREATE_NAME, CREATE_NUM, UPDATE_NAME, UPDATE_NUM, CREATE_TIME, UPDATE_TIME, STATE
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from sys_menu
+    where MENU_NUM = #{menuNum,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from sys_menu
+    where MENU_NUM = #{menuNum,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="cn.csdn.pojo.SysMenu">
+    insert into sys_menu (MENU_NUM, MENU_NAME, FATHER_NUM, 
+      ICON_NUM, MENU_LINE, MENU_TYPE, 
+      OPEN_TYPE, MENU_ORDER, CREATE_NAME, 
+      CREATE_NUM, UPDATE_NAME, UPDATE_NUM, 
+      CREATE_TIME, UPDATE_TIME, STATE
+      )
+    values (#{menuNum,jdbcType=VARCHAR}, #{menuName,jdbcType=VARCHAR}, #{fatherNum,jdbcType=VARCHAR}, 
+      #{iconNum,jdbcType=VARCHAR}, #{menuLine,jdbcType=VARCHAR}, #{menuType,jdbcType=VARCHAR}, 
+      #{openType,jdbcType=VARCHAR}, #{menuOrder,jdbcType=INTEGER}, #{createName,jdbcType=VARCHAR}, 
+      #{createNum,jdbcType=VARCHAR}, #{updateName,jdbcType=VARCHAR}, #{updateNum,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=DATE}, #{updateTime,jdbcType=DATE}, #{state,jdbcType=CHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="cn.csdn.pojo.SysMenu">
+    insert into sys_menu
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="menuNum != null">
+        MENU_NUM,
+      </if>
+      <if test="menuName != null">
+        MENU_NAME,
+      </if>
+      <if test="fatherNum != null">
+        FATHER_NUM,
+      </if>
+      <if test="iconNum != null">
+        ICON_NUM,
+      </if>
+      <if test="menuLine != null">
+        MENU_LINE,
+      </if>
+      <if test="menuType != null">
+        MENU_TYPE,
+      </if>
+      <if test="openType != null">
+        OPEN_TYPE,
+      </if>
+      <if test="menuOrder != null">
+        MENU_ORDER,
+      </if>
+      <if test="createName != null">
+        CREATE_NAME,
+      </if>
+      <if test="createNum != null">
+        CREATE_NUM,
+      </if>
+      <if test="updateName != null">
+        UPDATE_NAME,
+      </if>
+      <if test="updateNum != null">
+        UPDATE_NUM,
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME,
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME,
+      </if>
+      <if test="state != null">
+        STATE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="menuNum != null">
+        #{menuNum,jdbcType=VARCHAR},
+      </if>
+      <if test="menuName != null">
+        #{menuName,jdbcType=VARCHAR},
+      </if>
+      <if test="fatherNum != null">
+        #{fatherNum,jdbcType=VARCHAR},
+      </if>
+      <if test="iconNum != null">
+        #{iconNum,jdbcType=VARCHAR},
+      </if>
+      <if test="menuLine != null">
+        #{menuLine,jdbcType=VARCHAR},
+      </if>
+      <if test="menuType != null">
+        #{menuType,jdbcType=VARCHAR},
+      </if>
+      <if test="openType != null">
+        #{openType,jdbcType=VARCHAR},
+      </if>
+      <if test="menuOrder != null">
+        #{menuOrder,jdbcType=INTEGER},
+      </if>
+      <if test="createName != null">
+        #{createName,jdbcType=VARCHAR},
+      </if>
+      <if test="createNum != null">
+        #{createNum,jdbcType=VARCHAR},
+      </if>
+      <if test="updateName != null">
+        #{updateName,jdbcType=VARCHAR},
+      </if>
+      <if test="updateNum != null">
+        #{updateNum,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=DATE},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=DATE},
+      </if>
+      <if test="state != null">
+        #{state,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.csdn.pojo.SysMenu">
+    update sys_menu
+    <set>
+      <if test="menuName != null">
+        MENU_NAME = #{menuName,jdbcType=VARCHAR},
+      </if>
+      <if test="fatherNum != null">
+        FATHER_NUM = #{fatherNum,jdbcType=VARCHAR},
+      </if>
+      <if test="iconNum != null">
+        ICON_NUM = #{iconNum,jdbcType=VARCHAR},
+      </if>
+      <if test="menuLine != null">
+        MENU_LINE = #{menuLine,jdbcType=VARCHAR},
+      </if>
+      <if test="menuType != null">
+        MENU_TYPE = #{menuType,jdbcType=VARCHAR},
+      </if>
+      <if test="openType != null">
+        OPEN_TYPE = #{openType,jdbcType=VARCHAR},
+      </if>
+      <if test="menuOrder != null">
+        MENU_ORDER = #{menuOrder,jdbcType=INTEGER},
+      </if>
+      <if test="createName != null">
+        CREATE_NAME = #{createName,jdbcType=VARCHAR},
+      </if>
+      <if test="createNum != null">
+        CREATE_NUM = #{createNum,jdbcType=VARCHAR},
+      </if>
+      <if test="updateName != null">
+        UPDATE_NAME = #{updateName,jdbcType=VARCHAR},
+      </if>
+      <if test="updateNum != null">
+        UPDATE_NUM = #{updateNum,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME = #{createTime,jdbcType=DATE},
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME = #{updateTime,jdbcType=DATE},
+      </if>
+      <if test="state != null">
+        STATE = #{state,jdbcType=CHAR},
+      </if>
+    </set>
+    where MENU_NUM = #{menuNum,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.csdn.pojo.SysMenu">
+    update sys_menu
+    set MENU_NAME = #{menuName,jdbcType=VARCHAR},
+      FATHER_NUM = #{fatherNum,jdbcType=VARCHAR},
+      ICON_NUM = #{iconNum,jdbcType=VARCHAR},
+      MENU_LINE = #{menuLine,jdbcType=VARCHAR},
+      MENU_TYPE = #{menuType,jdbcType=VARCHAR},
+      OPEN_TYPE = #{openType,jdbcType=VARCHAR},
+      MENU_ORDER = #{menuOrder,jdbcType=INTEGER},
+      CREATE_NAME = #{createName,jdbcType=VARCHAR},
+      CREATE_NUM = #{createNum,jdbcType=VARCHAR},
+      UPDATE_NAME = #{updateName,jdbcType=VARCHAR},
+      UPDATE_NUM = #{updateNum,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=DATE},
+      UPDATE_TIME = #{updateTime,jdbcType=DATE},
+      STATE = #{state,jdbcType=CHAR}
+    where MENU_NUM = #{menuNum,jdbcType=VARCHAR}
+  </update>
+</mapper>

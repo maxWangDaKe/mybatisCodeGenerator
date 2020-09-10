@@ -1,0 +1,1257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.csdn.mapper.TbLoanSummaryMapper">
+  <resultMap id="BaseResultMap" type="cn.csdn.pojo.TbLoanSummary">
+    <id column="loan_summary_id" jdbcType="VARCHAR" property="loanSummaryId" />
+    <result column="loan_num" jdbcType="VARCHAR" property="loanNum" />
+    <result column="loan_balance" jdbcType="DECIMAL" property="loanBalance" />
+    <result column="currency_cd" jdbcType="VARCHAR" property="currencyCd" />
+    <result column="loan_amt" jdbcType="DECIMAL" property="loanAmt" />
+    <result column="syndicated_share_id" jdbcType="VARCHAR" property="syndicatedShareId" />
+    <result column="classification_result_cd" jdbcType="VARCHAR" property="classificationResultCd" />
+    <result column="contract_id" jdbcType="VARCHAR" property="contractId" />
+    <result column="party_id" jdbcType="VARCHAR" property="partyId" />
+    <result column="year_classification_result_cd" jdbcType="VARCHAR" property="yearClassificationResultCd" />
+    <result column="credit_term" jdbcType="DECIMAL" property="creditTerm" />
+    <result column="cycle_unit" jdbcType="VARCHAR" property="cycleUnit" />
+    <result column="loan_Recombination_date" jdbcType="DATE" property="loanRecombinationDate" />
+    <result column="overdue_flag" jdbcType="VARCHAR" property="overdueFlag" />
+    <result column="Extension_flag" jdbcType="VARCHAR" property="extensionFlag" />
+    <result column="loan_five_level_classification" jdbcType="VARCHAR" property="loanFiveLevelClassification" />
+    <result column="loan_status" jdbcType="VARCHAR" property="loanStatus" />
+    <result column="end_date" jdbcType="DATE" property="endDate" />
+    <result column="loan_account" jdbcType="VARCHAR" property="loanAccount" />
+    <result column="loan_actual_maturity" jdbcType="DATE" property="loanActualMaturity" />
+    <result column="loan_original_expiration_date" jdbcType="DATE" property="loanOriginalExpirationDate" />
+    <result column="loan_actual_payment_date" jdbcType="DATE" property="loanActualPaymentDate" />
+    <result column="current_period" jdbcType="VARCHAR" property="currentPeriod" />
+    <result column="total_periods" jdbcType="VARCHAR" property="totalPeriods" />
+    <result column="benchmark_interest_rate" jdbcType="DECIMAL" property="benchmarkInterestRate" />
+    <result column="deposit_amount" jdbcType="DECIMAL" property="depositAmount" />
+    <result column="loan_term" jdbcType="VARCHAR" property="loanTerm" />
+    <result column="margin_account" jdbcType="VARCHAR" property="marginAccount" />
+    <result column="acquisition_date" jdbcType="DATE" property="acquisitionDate" />
+    <result column="entrusted_payment_mark" jdbcType="VARCHAR" property="entrustedPaymentMark" />
+    <result column="continuous_arrears_periods" jdbcType="VARCHAR" property="continuousArrearsPeriods" />
+    <result column="cumulative_arrears_periods" jdbcType="VARCHAR" property="cumulativeArrearsPeriods" />
+    <result column="now_turn_sign" jdbcType="VARCHAR" property="nowTurnSign" />
+    <result column="credit_staff_number" jdbcType="VARCHAR" property="creditStaffNumber" />
+    <result column="loan_officer_name" jdbcType="VARCHAR" property="loanOfficerName" />
+    <result column="note_number" jdbcType="VARCHAR" property="noteNumber" />
+    <result column="rate_float_proportion" jdbcType="DECIMAL" property="rateFloatProportion" />
+    <result column="interest_bearing_manner" jdbcType="VARCHAR" property="interestBearingManner" />
+    <result column="repayment_channels" jdbcType="VARCHAR" property="repaymentChannels" />
+    <result column="repayment_account" jdbcType="VARCHAR" property="repaymentAccount" />
+    <result column="repayment_type" jdbcType="VARCHAR" property="repaymentType" />
+    <result column="par_value" jdbcType="DECIMAL" property="parValue" />
+    <result column="customer_unified_num" jdbcType="VARCHAR" property="customerUnifiedNum" />
+    <result column="detailed_item_name" jdbcType="VARCHAR" property="detailedItemName" />
+    <result column="loan_account_number" jdbcType="VARCHAR" property="loanAccountNumber" />
+    <result column="bank_code" jdbcType="VARCHAR" property="bankCode" />
+    <result column="financial_license_no" jdbcType="VARCHAR" property="financialLicenseNo" />
+    <result column="internal_mechanism" jdbcType="VARCHAR" property="internalMechanism" />
+    <result column="detail_item_number" jdbcType="VARCHAR" property="detailItemNumber" />
+    <result column="bank_name" jdbcType="VARCHAR" property="bankName" />
+    <result column="repay_date" jdbcType="DATE" property="repayDate" />
+    <result column="repay_amt" jdbcType="DECIMAL" property="repayAmt" />
+    <result column="repay_lnterest" jdbcType="DECIMAL" property="repayLnterest" />
+    <result column="repay_org_num" jdbcType="VARCHAR" property="repayOrgNum" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="loan_detail_id" jdbcType="VARCHAR" property="loanDetailId" />
+    <result column="SUBJECTNO" jdbcType="VARCHAR" property="subjectno" />
+    <result column="OVERDUESUBJECTNO1" jdbcType="VARCHAR" property="overduesubjectno1" />
+    <result column="OVERDUESUBJECTNO2" jdbcType="VARCHAR" property="overduesubjectno2" />
+    <result column="DULLSUBJECTNO" jdbcType="VARCHAR" property="dullsubjectno" />
+    <result column="BADSUBJECTNO" jdbcType="VARCHAR" property="badsubjectno" />
+    <result column="DISCOUNTSUM" jdbcType="DECIMAL" property="discountsum" />
+    <result column="normalbalance" jdbcType="DECIMAL" property="normalbalance" />
+    <result column="OVERDUEBALANCE1" jdbcType="DECIMAL" property="overduebalance1" />
+    <result column="OVERDUEBALANCE2" jdbcType="DECIMAL" property="overduebalance2" />
+    <result column="DULLBALANCE" jdbcType="DECIMAL" property="dullbalance" />
+    <result column="BADBALANCE" jdbcType="DECIMAL" property="badbalance" />
+    <result column="ADVANCEFLAG" jdbcType="VARCHAR" property="advanceflag" />
+    <result column="SCF_APPLY_NUM" jdbcType="VARCHAR" property="scfApplyNum" />
+    <result column="INVOICE_BATCH_NUM" jdbcType="VARCHAR" property="invoiceBatchNum" />
+    <result column="loan_quasi_odd" jdbcType="VARCHAR" property="loanQuasiOdd" />
+    <result column="INTERESTBALANCE1" jdbcType="DECIMAL" property="interestbalance1" />
+    <result column="INTERESTBALANCE2" jdbcType="DECIMAL" property="interestbalance2" />
+    <result column="credit_use_address" jdbcType="VARCHAR" property="creditUseAddress" />
+    <result column="business_num" jdbcType="VARCHAR" property="businessNum" />
+    <result column="MFNORMALBALANCE" jdbcType="DECIMAL" property="mfnormalbalance" />
+    <result column="MFOVERDUEBALANCE1" jdbcType="DECIMAL" property="mfoverduebalance1" />
+    <result column="MFOVERDUEBALANCE2" jdbcType="DECIMAL" property="mfoverduebalance2" />
+    <result column="MFDULLBALANCE" jdbcType="DECIMAL" property="mfdullbalance" />
+    <result column="MFBADBALANCE" jdbcType="DECIMAL" property="mfbadbalance" />
+    <result column="product_type" jdbcType="VARCHAR" property="productType" />
+    <result column="mf_balance" jdbcType="DECIMAL" property="mfBalance" />
+    <result column="org_num" jdbcType="VARCHAR" property="orgNum" />
+    <result column="mforgid" jdbcType="VARCHAR" property="mforgid" />
+    <result column="MFupdateDate" jdbcType="DATE" property="mfupdatedate" />
+    <result column="MFUPDATEDATE1" jdbcType="DATE" property="mfupdatedate1" />
+    <result column="MFINTERESTBALANCE1" jdbcType="DECIMAL" property="mfinterestbalance1" />
+    <result column="MFINTERESTBALANCE2" jdbcType="DECIMAL" property="mfinterestbalance2" />
+    <result column="old_sum_id" jdbcType="VARCHAR" property="oldSumId" />
+    <result column="PaymentType" jdbcType="VARCHAR" property="paymenttype" />
+    <result column="auflag" jdbcType="VARCHAR" property="auflag" />
+    <result column="KEYVALUE" jdbcType="VARCHAR" property="keyvalue" />
+    <result column="productcode" jdbcType="VARCHAR" property="productcode" />
+    <result column="tranDiscountStatus" jdbcType="VARCHAR" property="trandiscountstatus" />
+    <result column="PSOVERDUEDAYS" jdbcType="VARCHAR" property="psoverduedays" />
+    <result column="PEOVERDUEDAYS" jdbcType="VARCHAR" property="peoverduedays" />
+    <result column="INTERESTRECEIVABLE" jdbcType="DECIMAL" property="interestreceivable" />
+    <result column="dpbalance" jdbcType="DECIMAL" property="dpbalance" />
+    <result column="user_num" jdbcType="VARCHAR" property="userNum" />
+    <result column="DEFER_INTEREST" jdbcType="DECIMAL" property="deferInterest" />
+    <result column="risk_exposuer" jdbcType="VARCHAR" property="riskExposuer" />
+    <result column="assets_classification" jdbcType="VARCHAR" property="assetsClassification" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    loan_summary_id, loan_num, loan_balance, currency_cd, loan_amt, syndicated_share_id, 
+    classification_result_cd, contract_id, party_id, year_classification_result_cd, credit_term, 
+    cycle_unit, loan_Recombination_date, overdue_flag, Extension_flag, loan_five_level_classification, 
+    loan_status, end_date, loan_account, loan_actual_maturity, loan_original_expiration_date, 
+    loan_actual_payment_date, current_period, total_periods, benchmark_interest_rate, 
+    deposit_amount, loan_term, margin_account, acquisition_date, entrusted_payment_mark, 
+    continuous_arrears_periods, cumulative_arrears_periods, now_turn_sign, credit_staff_number, 
+    loan_officer_name, note_number, rate_float_proportion, interest_bearing_manner, repayment_channels, 
+    repayment_account, repayment_type, par_value, customer_unified_num, detailed_item_name, 
+    loan_account_number, bank_code, financial_license_no, internal_mechanism, detail_item_number, 
+    bank_name, repay_date, repay_amt, repay_lnterest, repay_org_num, create_time, update_time, 
+    loan_detail_id, SUBJECTNO, OVERDUESUBJECTNO1, OVERDUESUBJECTNO2, DULLSUBJECTNO, BADSUBJECTNO, 
+    DISCOUNTSUM, normalbalance, OVERDUEBALANCE1, OVERDUEBALANCE2, DULLBALANCE, BADBALANCE, 
+    ADVANCEFLAG, SCF_APPLY_NUM, INVOICE_BATCH_NUM, loan_quasi_odd, INTERESTBALANCE1, 
+    INTERESTBALANCE2, credit_use_address, business_num, MFNORMALBALANCE, MFOVERDUEBALANCE1, 
+    MFOVERDUEBALANCE2, MFDULLBALANCE, MFBADBALANCE, product_type, mf_balance, org_num, 
+    mforgid, MFupdateDate, MFUPDATEDATE1, MFINTERESTBALANCE1, MFINTERESTBALANCE2, old_sum_id, 
+    PaymentType, auflag, KEYVALUE, productcode, tranDiscountStatus, PSOVERDUEDAYS, PEOVERDUEDAYS, 
+    INTERESTRECEIVABLE, dpbalance, user_num, DEFER_INTEREST, risk_exposuer, assets_classification
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tb_loan_summary
+    where loan_summary_id = #{loanSummaryId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from tb_loan_summary
+    where loan_summary_id = #{loanSummaryId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="cn.csdn.pojo.TbLoanSummary">
+    insert into tb_loan_summary (loan_summary_id, loan_num, loan_balance, 
+      currency_cd, loan_amt, syndicated_share_id, 
+      classification_result_cd, contract_id, party_id, 
+      year_classification_result_cd, credit_term, 
+      cycle_unit, loan_Recombination_date, overdue_flag, 
+      Extension_flag, loan_five_level_classification, 
+      loan_status, end_date, loan_account, 
+      loan_actual_maturity, loan_original_expiration_date, 
+      loan_actual_payment_date, current_period, total_periods, 
+      benchmark_interest_rate, deposit_amount, loan_term, 
+      margin_account, acquisition_date, entrusted_payment_mark, 
+      continuous_arrears_periods, cumulative_arrears_periods, 
+      now_turn_sign, credit_staff_number, loan_officer_name, 
+      note_number, rate_float_proportion, interest_bearing_manner, 
+      repayment_channels, repayment_account, repayment_type, 
+      par_value, customer_unified_num, detailed_item_name, 
+      loan_account_number, bank_code, financial_license_no, 
+      internal_mechanism, detail_item_number, bank_name, 
+      repay_date, repay_amt, repay_lnterest, 
+      repay_org_num, create_time, update_time, 
+      loan_detail_id, SUBJECTNO, OVERDUESUBJECTNO1, 
+      OVERDUESUBJECTNO2, DULLSUBJECTNO, BADSUBJECTNO, 
+      DISCOUNTSUM, normalbalance, OVERDUEBALANCE1, 
+      OVERDUEBALANCE2, DULLBALANCE, BADBALANCE, 
+      ADVANCEFLAG, SCF_APPLY_NUM, INVOICE_BATCH_NUM, 
+      loan_quasi_odd, INTERESTBALANCE1, INTERESTBALANCE2, 
+      credit_use_address, business_num, MFNORMALBALANCE, 
+      MFOVERDUEBALANCE1, MFOVERDUEBALANCE2, MFDULLBALANCE, 
+      MFBADBALANCE, product_type, mf_balance, 
+      org_num, mforgid, MFupdateDate, 
+      MFUPDATEDATE1, MFINTERESTBALANCE1, MFINTERESTBALANCE2, 
+      old_sum_id, PaymentType, auflag, 
+      KEYVALUE, productcode, tranDiscountStatus, 
+      PSOVERDUEDAYS, PEOVERDUEDAYS, INTERESTRECEIVABLE, 
+      dpbalance, user_num, DEFER_INTEREST, 
+      risk_exposuer, assets_classification)
+    values (#{loanSummaryId,jdbcType=VARCHAR}, #{loanNum,jdbcType=VARCHAR}, #{loanBalance,jdbcType=DECIMAL}, 
+      #{currencyCd,jdbcType=VARCHAR}, #{loanAmt,jdbcType=DECIMAL}, #{syndicatedShareId,jdbcType=VARCHAR}, 
+      #{classificationResultCd,jdbcType=VARCHAR}, #{contractId,jdbcType=VARCHAR}, #{partyId,jdbcType=VARCHAR}, 
+      #{yearClassificationResultCd,jdbcType=VARCHAR}, #{creditTerm,jdbcType=DECIMAL}, 
+      #{cycleUnit,jdbcType=VARCHAR}, #{loanRecombinationDate,jdbcType=DATE}, #{overdueFlag,jdbcType=VARCHAR}, 
+      #{extensionFlag,jdbcType=VARCHAR}, #{loanFiveLevelClassification,jdbcType=VARCHAR}, 
+      #{loanStatus,jdbcType=VARCHAR}, #{endDate,jdbcType=DATE}, #{loanAccount,jdbcType=VARCHAR}, 
+      #{loanActualMaturity,jdbcType=DATE}, #{loanOriginalExpirationDate,jdbcType=DATE}, 
+      #{loanActualPaymentDate,jdbcType=DATE}, #{currentPeriod,jdbcType=VARCHAR}, #{totalPeriods,jdbcType=VARCHAR}, 
+      #{benchmarkInterestRate,jdbcType=DECIMAL}, #{depositAmount,jdbcType=DECIMAL}, #{loanTerm,jdbcType=VARCHAR}, 
+      #{marginAccount,jdbcType=VARCHAR}, #{acquisitionDate,jdbcType=DATE}, #{entrustedPaymentMark,jdbcType=VARCHAR}, 
+      #{continuousArrearsPeriods,jdbcType=VARCHAR}, #{cumulativeArrearsPeriods,jdbcType=VARCHAR}, 
+      #{nowTurnSign,jdbcType=VARCHAR}, #{creditStaffNumber,jdbcType=VARCHAR}, #{loanOfficerName,jdbcType=VARCHAR}, 
+      #{noteNumber,jdbcType=VARCHAR}, #{rateFloatProportion,jdbcType=DECIMAL}, #{interestBearingManner,jdbcType=VARCHAR}, 
+      #{repaymentChannels,jdbcType=VARCHAR}, #{repaymentAccount,jdbcType=VARCHAR}, #{repaymentType,jdbcType=VARCHAR}, 
+      #{parValue,jdbcType=DECIMAL}, #{customerUnifiedNum,jdbcType=VARCHAR}, #{detailedItemName,jdbcType=VARCHAR}, 
+      #{loanAccountNumber,jdbcType=VARCHAR}, #{bankCode,jdbcType=VARCHAR}, #{financialLicenseNo,jdbcType=VARCHAR}, 
+      #{internalMechanism,jdbcType=VARCHAR}, #{detailItemNumber,jdbcType=VARCHAR}, #{bankName,jdbcType=VARCHAR}, 
+      #{repayDate,jdbcType=DATE}, #{repayAmt,jdbcType=DECIMAL}, #{repayLnterest,jdbcType=DECIMAL}, 
+      #{repayOrgNum,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{loanDetailId,jdbcType=VARCHAR}, #{subjectno,jdbcType=VARCHAR}, #{overduesubjectno1,jdbcType=VARCHAR}, 
+      #{overduesubjectno2,jdbcType=VARCHAR}, #{dullsubjectno,jdbcType=VARCHAR}, #{badsubjectno,jdbcType=VARCHAR}, 
+      #{discountsum,jdbcType=DECIMAL}, #{normalbalance,jdbcType=DECIMAL}, #{overduebalance1,jdbcType=DECIMAL}, 
+      #{overduebalance2,jdbcType=DECIMAL}, #{dullbalance,jdbcType=DECIMAL}, #{badbalance,jdbcType=DECIMAL}, 
+      #{advanceflag,jdbcType=VARCHAR}, #{scfApplyNum,jdbcType=VARCHAR}, #{invoiceBatchNum,jdbcType=VARCHAR}, 
+      #{loanQuasiOdd,jdbcType=VARCHAR}, #{interestbalance1,jdbcType=DECIMAL}, #{interestbalance2,jdbcType=DECIMAL}, 
+      #{creditUseAddress,jdbcType=VARCHAR}, #{businessNum,jdbcType=VARCHAR}, #{mfnormalbalance,jdbcType=DECIMAL}, 
+      #{mfoverduebalance1,jdbcType=DECIMAL}, #{mfoverduebalance2,jdbcType=DECIMAL}, #{mfdullbalance,jdbcType=DECIMAL}, 
+      #{mfbadbalance,jdbcType=DECIMAL}, #{productType,jdbcType=VARCHAR}, #{mfBalance,jdbcType=DECIMAL}, 
+      #{orgNum,jdbcType=VARCHAR}, #{mforgid,jdbcType=VARCHAR}, #{mfupdatedate,jdbcType=DATE}, 
+      #{mfupdatedate1,jdbcType=DATE}, #{mfinterestbalance1,jdbcType=DECIMAL}, #{mfinterestbalance2,jdbcType=DECIMAL}, 
+      #{oldSumId,jdbcType=VARCHAR}, #{paymenttype,jdbcType=VARCHAR}, #{auflag,jdbcType=VARCHAR}, 
+      #{keyvalue,jdbcType=VARCHAR}, #{productcode,jdbcType=VARCHAR}, #{trandiscountstatus,jdbcType=VARCHAR}, 
+      #{psoverduedays,jdbcType=VARCHAR}, #{peoverduedays,jdbcType=VARCHAR}, #{interestreceivable,jdbcType=DECIMAL}, 
+      #{dpbalance,jdbcType=DECIMAL}, #{userNum,jdbcType=VARCHAR}, #{deferInterest,jdbcType=DECIMAL}, 
+      #{riskExposuer,jdbcType=VARCHAR}, #{assetsClassification,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.csdn.pojo.TbLoanSummary">
+    insert into tb_loan_summary
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="loanSummaryId != null">
+        loan_summary_id,
+      </if>
+      <if test="loanNum != null">
+        loan_num,
+      </if>
+      <if test="loanBalance != null">
+        loan_balance,
+      </if>
+      <if test="currencyCd != null">
+        currency_cd,
+      </if>
+      <if test="loanAmt != null">
+        loan_amt,
+      </if>
+      <if test="syndicatedShareId != null">
+        syndicated_share_id,
+      </if>
+      <if test="classificationResultCd != null">
+        classification_result_cd,
+      </if>
+      <if test="contractId != null">
+        contract_id,
+      </if>
+      <if test="partyId != null">
+        party_id,
+      </if>
+      <if test="yearClassificationResultCd != null">
+        year_classification_result_cd,
+      </if>
+      <if test="creditTerm != null">
+        credit_term,
+      </if>
+      <if test="cycleUnit != null">
+        cycle_unit,
+      </if>
+      <if test="loanRecombinationDate != null">
+        loan_Recombination_date,
+      </if>
+      <if test="overdueFlag != null">
+        overdue_flag,
+      </if>
+      <if test="extensionFlag != null">
+        Extension_flag,
+      </if>
+      <if test="loanFiveLevelClassification != null">
+        loan_five_level_classification,
+      </if>
+      <if test="loanStatus != null">
+        loan_status,
+      </if>
+      <if test="endDate != null">
+        end_date,
+      </if>
+      <if test="loanAccount != null">
+        loan_account,
+      </if>
+      <if test="loanActualMaturity != null">
+        loan_actual_maturity,
+      </if>
+      <if test="loanOriginalExpirationDate != null">
+        loan_original_expiration_date,
+      </if>
+      <if test="loanActualPaymentDate != null">
+        loan_actual_payment_date,
+      </if>
+      <if test="currentPeriod != null">
+        current_period,
+      </if>
+      <if test="totalPeriods != null">
+        total_periods,
+      </if>
+      <if test="benchmarkInterestRate != null">
+        benchmark_interest_rate,
+      </if>
+      <if test="depositAmount != null">
+        deposit_amount,
+      </if>
+      <if test="loanTerm != null">
+        loan_term,
+      </if>
+      <if test="marginAccount != null">
+        margin_account,
+      </if>
+      <if test="acquisitionDate != null">
+        acquisition_date,
+      </if>
+      <if test="entrustedPaymentMark != null">
+        entrusted_payment_mark,
+      </if>
+      <if test="continuousArrearsPeriods != null">
+        continuous_arrears_periods,
+      </if>
+      <if test="cumulativeArrearsPeriods != null">
+        cumulative_arrears_periods,
+      </if>
+      <if test="nowTurnSign != null">
+        now_turn_sign,
+      </if>
+      <if test="creditStaffNumber != null">
+        credit_staff_number,
+      </if>
+      <if test="loanOfficerName != null">
+        loan_officer_name,
+      </if>
+      <if test="noteNumber != null">
+        note_number,
+      </if>
+      <if test="rateFloatProportion != null">
+        rate_float_proportion,
+      </if>
+      <if test="interestBearingManner != null">
+        interest_bearing_manner,
+      </if>
+      <if test="repaymentChannels != null">
+        repayment_channels,
+      </if>
+      <if test="repaymentAccount != null">
+        repayment_account,
+      </if>
+      <if test="repaymentType != null">
+        repayment_type,
+      </if>
+      <if test="parValue != null">
+        par_value,
+      </if>
+      <if test="customerUnifiedNum != null">
+        customer_unified_num,
+      </if>
+      <if test="detailedItemName != null">
+        detailed_item_name,
+      </if>
+      <if test="loanAccountNumber != null">
+        loan_account_number,
+      </if>
+      <if test="bankCode != null">
+        bank_code,
+      </if>
+      <if test="financialLicenseNo != null">
+        financial_license_no,
+      </if>
+      <if test="internalMechanism != null">
+        internal_mechanism,
+      </if>
+      <if test="detailItemNumber != null">
+        detail_item_number,
+      </if>
+      <if test="bankName != null">
+        bank_name,
+      </if>
+      <if test="repayDate != null">
+        repay_date,
+      </if>
+      <if test="repayAmt != null">
+        repay_amt,
+      </if>
+      <if test="repayLnterest != null">
+        repay_lnterest,
+      </if>
+      <if test="repayOrgNum != null">
+        repay_org_num,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="loanDetailId != null">
+        loan_detail_id,
+      </if>
+      <if test="subjectno != null">
+        SUBJECTNO,
+      </if>
+      <if test="overduesubjectno1 != null">
+        OVERDUESUBJECTNO1,
+      </if>
+      <if test="overduesubjectno2 != null">
+        OVERDUESUBJECTNO2,
+      </if>
+      <if test="dullsubjectno != null">
+        DULLSUBJECTNO,
+      </if>
+      <if test="badsubjectno != null">
+        BADSUBJECTNO,
+      </if>
+      <if test="discountsum != null">
+        DISCOUNTSUM,
+      </if>
+      <if test="normalbalance != null">
+        normalbalance,
+      </if>
+      <if test="overduebalance1 != null">
+        OVERDUEBALANCE1,
+      </if>
+      <if test="overduebalance2 != null">
+        OVERDUEBALANCE2,
+      </if>
+      <if test="dullbalance != null">
+        DULLBALANCE,
+      </if>
+      <if test="badbalance != null">
+        BADBALANCE,
+      </if>
+      <if test="advanceflag != null">
+        ADVANCEFLAG,
+      </if>
+      <if test="scfApplyNum != null">
+        SCF_APPLY_NUM,
+      </if>
+      <if test="invoiceBatchNum != null">
+        INVOICE_BATCH_NUM,
+      </if>
+      <if test="loanQuasiOdd != null">
+        loan_quasi_odd,
+      </if>
+      <if test="interestbalance1 != null">
+        INTERESTBALANCE1,
+      </if>
+      <if test="interestbalance2 != null">
+        INTERESTBALANCE2,
+      </if>
+      <if test="creditUseAddress != null">
+        credit_use_address,
+      </if>
+      <if test="businessNum != null">
+        business_num,
+      </if>
+      <if test="mfnormalbalance != null">
+        MFNORMALBALANCE,
+      </if>
+      <if test="mfoverduebalance1 != null">
+        MFOVERDUEBALANCE1,
+      </if>
+      <if test="mfoverduebalance2 != null">
+        MFOVERDUEBALANCE2,
+      </if>
+      <if test="mfdullbalance != null">
+        MFDULLBALANCE,
+      </if>
+      <if test="mfbadbalance != null">
+        MFBADBALANCE,
+      </if>
+      <if test="productType != null">
+        product_type,
+      </if>
+      <if test="mfBalance != null">
+        mf_balance,
+      </if>
+      <if test="orgNum != null">
+        org_num,
+      </if>
+      <if test="mforgid != null">
+        mforgid,
+      </if>
+      <if test="mfupdatedate != null">
+        MFupdateDate,
+      </if>
+      <if test="mfupdatedate1 != null">
+        MFUPDATEDATE1,
+      </if>
+      <if test="mfinterestbalance1 != null">
+        MFINTERESTBALANCE1,
+      </if>
+      <if test="mfinterestbalance2 != null">
+        MFINTERESTBALANCE2,
+      </if>
+      <if test="oldSumId != null">
+        old_sum_id,
+      </if>
+      <if test="paymenttype != null">
+        PaymentType,
+      </if>
+      <if test="auflag != null">
+        auflag,
+      </if>
+      <if test="keyvalue != null">
+        KEYVALUE,
+      </if>
+      <if test="productcode != null">
+        productcode,
+      </if>
+      <if test="trandiscountstatus != null">
+        tranDiscountStatus,
+      </if>
+      <if test="psoverduedays != null">
+        PSOVERDUEDAYS,
+      </if>
+      <if test="peoverduedays != null">
+        PEOVERDUEDAYS,
+      </if>
+      <if test="interestreceivable != null">
+        INTERESTRECEIVABLE,
+      </if>
+      <if test="dpbalance != null">
+        dpbalance,
+      </if>
+      <if test="userNum != null">
+        user_num,
+      </if>
+      <if test="deferInterest != null">
+        DEFER_INTEREST,
+      </if>
+      <if test="riskExposuer != null">
+        risk_exposuer,
+      </if>
+      <if test="assetsClassification != null">
+        assets_classification,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="loanSummaryId != null">
+        #{loanSummaryId,jdbcType=VARCHAR},
+      </if>
+      <if test="loanNum != null">
+        #{loanNum,jdbcType=VARCHAR},
+      </if>
+      <if test="loanBalance != null">
+        #{loanBalance,jdbcType=DECIMAL},
+      </if>
+      <if test="currencyCd != null">
+        #{currencyCd,jdbcType=VARCHAR},
+      </if>
+      <if test="loanAmt != null">
+        #{loanAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="syndicatedShareId != null">
+        #{syndicatedShareId,jdbcType=VARCHAR},
+      </if>
+      <if test="classificationResultCd != null">
+        #{classificationResultCd,jdbcType=VARCHAR},
+      </if>
+      <if test="contractId != null">
+        #{contractId,jdbcType=VARCHAR},
+      </if>
+      <if test="partyId != null">
+        #{partyId,jdbcType=VARCHAR},
+      </if>
+      <if test="yearClassificationResultCd != null">
+        #{yearClassificationResultCd,jdbcType=VARCHAR},
+      </if>
+      <if test="creditTerm != null">
+        #{creditTerm,jdbcType=DECIMAL},
+      </if>
+      <if test="cycleUnit != null">
+        #{cycleUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="loanRecombinationDate != null">
+        #{loanRecombinationDate,jdbcType=DATE},
+      </if>
+      <if test="overdueFlag != null">
+        #{overdueFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="extensionFlag != null">
+        #{extensionFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="loanFiveLevelClassification != null">
+        #{loanFiveLevelClassification,jdbcType=VARCHAR},
+      </if>
+      <if test="loanStatus != null">
+        #{loanStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="endDate != null">
+        #{endDate,jdbcType=DATE},
+      </if>
+      <if test="loanAccount != null">
+        #{loanAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="loanActualMaturity != null">
+        #{loanActualMaturity,jdbcType=DATE},
+      </if>
+      <if test="loanOriginalExpirationDate != null">
+        #{loanOriginalExpirationDate,jdbcType=DATE},
+      </if>
+      <if test="loanActualPaymentDate != null">
+        #{loanActualPaymentDate,jdbcType=DATE},
+      </if>
+      <if test="currentPeriod != null">
+        #{currentPeriod,jdbcType=VARCHAR},
+      </if>
+      <if test="totalPeriods != null">
+        #{totalPeriods,jdbcType=VARCHAR},
+      </if>
+      <if test="benchmarkInterestRate != null">
+        #{benchmarkInterestRate,jdbcType=DECIMAL},
+      </if>
+      <if test="depositAmount != null">
+        #{depositAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="loanTerm != null">
+        #{loanTerm,jdbcType=VARCHAR},
+      </if>
+      <if test="marginAccount != null">
+        #{marginAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="acquisitionDate != null">
+        #{acquisitionDate,jdbcType=DATE},
+      </if>
+      <if test="entrustedPaymentMark != null">
+        #{entrustedPaymentMark,jdbcType=VARCHAR},
+      </if>
+      <if test="continuousArrearsPeriods != null">
+        #{continuousArrearsPeriods,jdbcType=VARCHAR},
+      </if>
+      <if test="cumulativeArrearsPeriods != null">
+        #{cumulativeArrearsPeriods,jdbcType=VARCHAR},
+      </if>
+      <if test="nowTurnSign != null">
+        #{nowTurnSign,jdbcType=VARCHAR},
+      </if>
+      <if test="creditStaffNumber != null">
+        #{creditStaffNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="loanOfficerName != null">
+        #{loanOfficerName,jdbcType=VARCHAR},
+      </if>
+      <if test="noteNumber != null">
+        #{noteNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="rateFloatProportion != null">
+        #{rateFloatProportion,jdbcType=DECIMAL},
+      </if>
+      <if test="interestBearingManner != null">
+        #{interestBearingManner,jdbcType=VARCHAR},
+      </if>
+      <if test="repaymentChannels != null">
+        #{repaymentChannels,jdbcType=VARCHAR},
+      </if>
+      <if test="repaymentAccount != null">
+        #{repaymentAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="repaymentType != null">
+        #{repaymentType,jdbcType=VARCHAR},
+      </if>
+      <if test="parValue != null">
+        #{parValue,jdbcType=DECIMAL},
+      </if>
+      <if test="customerUnifiedNum != null">
+        #{customerUnifiedNum,jdbcType=VARCHAR},
+      </if>
+      <if test="detailedItemName != null">
+        #{detailedItemName,jdbcType=VARCHAR},
+      </if>
+      <if test="loanAccountNumber != null">
+        #{loanAccountNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="bankCode != null">
+        #{bankCode,jdbcType=VARCHAR},
+      </if>
+      <if test="financialLicenseNo != null">
+        #{financialLicenseNo,jdbcType=VARCHAR},
+      </if>
+      <if test="internalMechanism != null">
+        #{internalMechanism,jdbcType=VARCHAR},
+      </if>
+      <if test="detailItemNumber != null">
+        #{detailItemNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="bankName != null">
+        #{bankName,jdbcType=VARCHAR},
+      </if>
+      <if test="repayDate != null">
+        #{repayDate,jdbcType=DATE},
+      </if>
+      <if test="repayAmt != null">
+        #{repayAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="repayLnterest != null">
+        #{repayLnterest,jdbcType=DECIMAL},
+      </if>
+      <if test="repayOrgNum != null">
+        #{repayOrgNum,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="loanDetailId != null">
+        #{loanDetailId,jdbcType=VARCHAR},
+      </if>
+      <if test="subjectno != null">
+        #{subjectno,jdbcType=VARCHAR},
+      </if>
+      <if test="overduesubjectno1 != null">
+        #{overduesubjectno1,jdbcType=VARCHAR},
+      </if>
+      <if test="overduesubjectno2 != null">
+        #{overduesubjectno2,jdbcType=VARCHAR},
+      </if>
+      <if test="dullsubjectno != null">
+        #{dullsubjectno,jdbcType=VARCHAR},
+      </if>
+      <if test="badsubjectno != null">
+        #{badsubjectno,jdbcType=VARCHAR},
+      </if>
+      <if test="discountsum != null">
+        #{discountsum,jdbcType=DECIMAL},
+      </if>
+      <if test="normalbalance != null">
+        #{normalbalance,jdbcType=DECIMAL},
+      </if>
+      <if test="overduebalance1 != null">
+        #{overduebalance1,jdbcType=DECIMAL},
+      </if>
+      <if test="overduebalance2 != null">
+        #{overduebalance2,jdbcType=DECIMAL},
+      </if>
+      <if test="dullbalance != null">
+        #{dullbalance,jdbcType=DECIMAL},
+      </if>
+      <if test="badbalance != null">
+        #{badbalance,jdbcType=DECIMAL},
+      </if>
+      <if test="advanceflag != null">
+        #{advanceflag,jdbcType=VARCHAR},
+      </if>
+      <if test="scfApplyNum != null">
+        #{scfApplyNum,jdbcType=VARCHAR},
+      </if>
+      <if test="invoiceBatchNum != null">
+        #{invoiceBatchNum,jdbcType=VARCHAR},
+      </if>
+      <if test="loanQuasiOdd != null">
+        #{loanQuasiOdd,jdbcType=VARCHAR},
+      </if>
+      <if test="interestbalance1 != null">
+        #{interestbalance1,jdbcType=DECIMAL},
+      </if>
+      <if test="interestbalance2 != null">
+        #{interestbalance2,jdbcType=DECIMAL},
+      </if>
+      <if test="creditUseAddress != null">
+        #{creditUseAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="businessNum != null">
+        #{businessNum,jdbcType=VARCHAR},
+      </if>
+      <if test="mfnormalbalance != null">
+        #{mfnormalbalance,jdbcType=DECIMAL},
+      </if>
+      <if test="mfoverduebalance1 != null">
+        #{mfoverduebalance1,jdbcType=DECIMAL},
+      </if>
+      <if test="mfoverduebalance2 != null">
+        #{mfoverduebalance2,jdbcType=DECIMAL},
+      </if>
+      <if test="mfdullbalance != null">
+        #{mfdullbalance,jdbcType=DECIMAL},
+      </if>
+      <if test="mfbadbalance != null">
+        #{mfbadbalance,jdbcType=DECIMAL},
+      </if>
+      <if test="productType != null">
+        #{productType,jdbcType=VARCHAR},
+      </if>
+      <if test="mfBalance != null">
+        #{mfBalance,jdbcType=DECIMAL},
+      </if>
+      <if test="orgNum != null">
+        #{orgNum,jdbcType=VARCHAR},
+      </if>
+      <if test="mforgid != null">
+        #{mforgid,jdbcType=VARCHAR},
+      </if>
+      <if test="mfupdatedate != null">
+        #{mfupdatedate,jdbcType=DATE},
+      </if>
+      <if test="mfupdatedate1 != null">
+        #{mfupdatedate1,jdbcType=DATE},
+      </if>
+      <if test="mfinterestbalance1 != null">
+        #{mfinterestbalance1,jdbcType=DECIMAL},
+      </if>
+      <if test="mfinterestbalance2 != null">
+        #{mfinterestbalance2,jdbcType=DECIMAL},
+      </if>
+      <if test="oldSumId != null">
+        #{oldSumId,jdbcType=VARCHAR},
+      </if>
+      <if test="paymenttype != null">
+        #{paymenttype,jdbcType=VARCHAR},
+      </if>
+      <if test="auflag != null">
+        #{auflag,jdbcType=VARCHAR},
+      </if>
+      <if test="keyvalue != null">
+        #{keyvalue,jdbcType=VARCHAR},
+      </if>
+      <if test="productcode != null">
+        #{productcode,jdbcType=VARCHAR},
+      </if>
+      <if test="trandiscountstatus != null">
+        #{trandiscountstatus,jdbcType=VARCHAR},
+      </if>
+      <if test="psoverduedays != null">
+        #{psoverduedays,jdbcType=VARCHAR},
+      </if>
+      <if test="peoverduedays != null">
+        #{peoverduedays,jdbcType=VARCHAR},
+      </if>
+      <if test="interestreceivable != null">
+        #{interestreceivable,jdbcType=DECIMAL},
+      </if>
+      <if test="dpbalance != null">
+        #{dpbalance,jdbcType=DECIMAL},
+      </if>
+      <if test="userNum != null">
+        #{userNum,jdbcType=VARCHAR},
+      </if>
+      <if test="deferInterest != null">
+        #{deferInterest,jdbcType=DECIMAL},
+      </if>
+      <if test="riskExposuer != null">
+        #{riskExposuer,jdbcType=VARCHAR},
+      </if>
+      <if test="assetsClassification != null">
+        #{assetsClassification,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.csdn.pojo.TbLoanSummary">
+    update tb_loan_summary
+    <set>
+      <if test="loanNum != null">
+        loan_num = #{loanNum,jdbcType=VARCHAR},
+      </if>
+      <if test="loanBalance != null">
+        loan_balance = #{loanBalance,jdbcType=DECIMAL},
+      </if>
+      <if test="currencyCd != null">
+        currency_cd = #{currencyCd,jdbcType=VARCHAR},
+      </if>
+      <if test="loanAmt != null">
+        loan_amt = #{loanAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="syndicatedShareId != null">
+        syndicated_share_id = #{syndicatedShareId,jdbcType=VARCHAR},
+      </if>
+      <if test="classificationResultCd != null">
+        classification_result_cd = #{classificationResultCd,jdbcType=VARCHAR},
+      </if>
+      <if test="contractId != null">
+        contract_id = #{contractId,jdbcType=VARCHAR},
+      </if>
+      <if test="partyId != null">
+        party_id = #{partyId,jdbcType=VARCHAR},
+      </if>
+      <if test="yearClassificationResultCd != null">
+        year_classification_result_cd = #{yearClassificationResultCd,jdbcType=VARCHAR},
+      </if>
+      <if test="creditTerm != null">
+        credit_term = #{creditTerm,jdbcType=DECIMAL},
+      </if>
+      <if test="cycleUnit != null">
+        cycle_unit = #{cycleUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="loanRecombinationDate != null">
+        loan_Recombination_date = #{loanRecombinationDate,jdbcType=DATE},
+      </if>
+      <if test="overdueFlag != null">
+        overdue_flag = #{overdueFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="extensionFlag != null">
+        Extension_flag = #{extensionFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="loanFiveLevelClassification != null">
+        loan_five_level_classification = #{loanFiveLevelClassification,jdbcType=VARCHAR},
+      </if>
+      <if test="loanStatus != null">
+        loan_status = #{loanStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="endDate != null">
+        end_date = #{endDate,jdbcType=DATE},
+      </if>
+      <if test="loanAccount != null">
+        loan_account = #{loanAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="loanActualMaturity != null">
+        loan_actual_maturity = #{loanActualMaturity,jdbcType=DATE},
+      </if>
+      <if test="loanOriginalExpirationDate != null">
+        loan_original_expiration_date = #{loanOriginalExpirationDate,jdbcType=DATE},
+      </if>
+      <if test="loanActualPaymentDate != null">
+        loan_actual_payment_date = #{loanActualPaymentDate,jdbcType=DATE},
+      </if>
+      <if test="currentPeriod != null">
+        current_period = #{currentPeriod,jdbcType=VARCHAR},
+      </if>
+      <if test="totalPeriods != null">
+        total_periods = #{totalPeriods,jdbcType=VARCHAR},
+      </if>
+      <if test="benchmarkInterestRate != null">
+        benchmark_interest_rate = #{benchmarkInterestRate,jdbcType=DECIMAL},
+      </if>
+      <if test="depositAmount != null">
+        deposit_amount = #{depositAmount,jdbcType=DECIMAL},
+      </if>
+      <if test="loanTerm != null">
+        loan_term = #{loanTerm,jdbcType=VARCHAR},
+      </if>
+      <if test="marginAccount != null">
+        margin_account = #{marginAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="acquisitionDate != null">
+        acquisition_date = #{acquisitionDate,jdbcType=DATE},
+      </if>
+      <if test="entrustedPaymentMark != null">
+        entrusted_payment_mark = #{entrustedPaymentMark,jdbcType=VARCHAR},
+      </if>
+      <if test="continuousArrearsPeriods != null">
+        continuous_arrears_periods = #{continuousArrearsPeriods,jdbcType=VARCHAR},
+      </if>
+      <if test="cumulativeArrearsPeriods != null">
+        cumulative_arrears_periods = #{cumulativeArrearsPeriods,jdbcType=VARCHAR},
+      </if>
+      <if test="nowTurnSign != null">
+        now_turn_sign = #{nowTurnSign,jdbcType=VARCHAR},
+      </if>
+      <if test="creditStaffNumber != null">
+        credit_staff_number = #{creditStaffNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="loanOfficerName != null">
+        loan_officer_name = #{loanOfficerName,jdbcType=VARCHAR},
+      </if>
+      <if test="noteNumber != null">
+        note_number = #{noteNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="rateFloatProportion != null">
+        rate_float_proportion = #{rateFloatProportion,jdbcType=DECIMAL},
+      </if>
+      <if test="interestBearingManner != null">
+        interest_bearing_manner = #{interestBearingManner,jdbcType=VARCHAR},
+      </if>
+      <if test="repaymentChannels != null">
+        repayment_channels = #{repaymentChannels,jdbcType=VARCHAR},
+      </if>
+      <if test="repaymentAccount != null">
+        repayment_account = #{repaymentAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="repaymentType != null">
+        repayment_type = #{repaymentType,jdbcType=VARCHAR},
+      </if>
+      <if test="parValue != null">
+        par_value = #{parValue,jdbcType=DECIMAL},
+      </if>
+      <if test="customerUnifiedNum != null">
+        customer_unified_num = #{customerUnifiedNum,jdbcType=VARCHAR},
+      </if>
+      <if test="detailedItemName != null">
+        detailed_item_name = #{detailedItemName,jdbcType=VARCHAR},
+      </if>
+      <if test="loanAccountNumber != null">
+        loan_account_number = #{loanAccountNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="bankCode != null">
+        bank_code = #{bankCode,jdbcType=VARCHAR},
+      </if>
+      <if test="financialLicenseNo != null">
+        financial_license_no = #{financialLicenseNo,jdbcType=VARCHAR},
+      </if>
+      <if test="internalMechanism != null">
+        internal_mechanism = #{internalMechanism,jdbcType=VARCHAR},
+      </if>
+      <if test="detailItemNumber != null">
+        detail_item_number = #{detailItemNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="bankName != null">
+        bank_name = #{bankName,jdbcType=VARCHAR},
+      </if>
+      <if test="repayDate != null">
+        repay_date = #{repayDate,jdbcType=DATE},
+      </if>
+      <if test="repayAmt != null">
+        repay_amt = #{repayAmt,jdbcType=DECIMAL},
+      </if>
+      <if test="repayLnterest != null">
+        repay_lnterest = #{repayLnterest,jdbcType=DECIMAL},
+      </if>
+      <if test="repayOrgNum != null">
+        repay_org_num = #{repayOrgNum,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="loanDetailId != null">
+        loan_detail_id = #{loanDetailId,jdbcType=VARCHAR},
+      </if>
+      <if test="subjectno != null">
+        SUBJECTNO = #{subjectno,jdbcType=VARCHAR},
+      </if>
+      <if test="overduesubjectno1 != null">
+        OVERDUESUBJECTNO1 = #{overduesubjectno1,jdbcType=VARCHAR},
+      </if>
+      <if test="overduesubjectno2 != null">
+        OVERDUESUBJECTNO2 = #{overduesubjectno2,jdbcType=VARCHAR},
+      </if>
+      <if test="dullsubjectno != null">
+        DULLSUBJECTNO = #{dullsubjectno,jdbcType=VARCHAR},
+      </if>
+      <if test="badsubjectno != null">
+        BADSUBJECTNO = #{badsubjectno,jdbcType=VARCHAR},
+      </if>
+      <if test="discountsum != null">
+        DISCOUNTSUM = #{discountsum,jdbcType=DECIMAL},
+      </if>
+      <if test="normalbalance != null">
+        normalbalance = #{normalbalance,jdbcType=DECIMAL},
+      </if>
+      <if test="overduebalance1 != null">
+        OVERDUEBALANCE1 = #{overduebalance1,jdbcType=DECIMAL},
+      </if>
+      <if test="overduebalance2 != null">
+        OVERDUEBALANCE2 = #{overduebalance2,jdbcType=DECIMAL},
+      </if>
+      <if test="dullbalance != null">
+        DULLBALANCE = #{dullbalance,jdbcType=DECIMAL},
+      </if>
+      <if test="badbalance != null">
+        BADBALANCE = #{badbalance,jdbcType=DECIMAL},
+      </if>
+      <if test="advanceflag != null">
+        ADVANCEFLAG = #{advanceflag,jdbcType=VARCHAR},
+      </if>
+      <if test="scfApplyNum != null">
+        SCF_APPLY_NUM = #{scfApplyNum,jdbcType=VARCHAR},
+      </if>
+      <if test="invoiceBatchNum != null">
+        INVOICE_BATCH_NUM = #{invoiceBatchNum,jdbcType=VARCHAR},
+      </if>
+      <if test="loanQuasiOdd != null">
+        loan_quasi_odd = #{loanQuasiOdd,jdbcType=VARCHAR},
+      </if>
+      <if test="interestbalance1 != null">
+        INTERESTBALANCE1 = #{interestbalance1,jdbcType=DECIMAL},
+      </if>
+      <if test="interestbalance2 != null">
+        INTERESTBALANCE2 = #{interestbalance2,jdbcType=DECIMAL},
+      </if>
+      <if test="creditUseAddress != null">
+        credit_use_address = #{creditUseAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="businessNum != null">
+        business_num = #{businessNum,jdbcType=VARCHAR},
+      </if>
+      <if test="mfnormalbalance != null">
+        MFNORMALBALANCE = #{mfnormalbalance,jdbcType=DECIMAL},
+      </if>
+      <if test="mfoverduebalance1 != null">
+        MFOVERDUEBALANCE1 = #{mfoverduebalance1,jdbcType=DECIMAL},
+      </if>
+      <if test="mfoverduebalance2 != null">
+        MFOVERDUEBALANCE2 = #{mfoverduebalance2,jdbcType=DECIMAL},
+      </if>
+      <if test="mfdullbalance != null">
+        MFDULLBALANCE = #{mfdullbalance,jdbcType=DECIMAL},
+      </if>
+      <if test="mfbadbalance != null">
+        MFBADBALANCE = #{mfbadbalance,jdbcType=DECIMAL},
+      </if>
+      <if test="productType != null">
+        product_type = #{productType,jdbcType=VARCHAR},
+      </if>
+      <if test="mfBalance != null">
+        mf_balance = #{mfBalance,jdbcType=DECIMAL},
+      </if>
+      <if test="orgNum != null">
+        org_num = #{orgNum,jdbcType=VARCHAR},
+      </if>
+      <if test="mforgid != null">
+        mforgid = #{mforgid,jdbcType=VARCHAR},
+      </if>
+      <if test="mfupdatedate != null">
+        MFupdateDate = #{mfupdatedate,jdbcType=DATE},
+      </if>
+      <if test="mfupdatedate1 != null">
+        MFUPDATEDATE1 = #{mfupdatedate1,jdbcType=DATE},
+      </if>
+      <if test="mfinterestbalance1 != null">
+        MFINTERESTBALANCE1 = #{mfinterestbalance1,jdbcType=DECIMAL},
+      </if>
+      <if test="mfinterestbalance2 != null">
+        MFINTERESTBALANCE2 = #{mfinterestbalance2,jdbcType=DECIMAL},
+      </if>
+      <if test="oldSumId != null">
+        old_sum_id = #{oldSumId,jdbcType=VARCHAR},
+      </if>
+      <if test="paymenttype != null">
+        PaymentType = #{paymenttype,jdbcType=VARCHAR},
+      </if>
+      <if test="auflag != null">
+        auflag = #{auflag,jdbcType=VARCHAR},
+      </if>
+      <if test="keyvalue != null">
+        KEYVALUE = #{keyvalue,jdbcType=VARCHAR},
+      </if>
+      <if test="productcode != null">
+        productcode = #{productcode,jdbcType=VARCHAR},
+      </if>
+      <if test="trandiscountstatus != null">
+        tranDiscountStatus = #{trandiscountstatus,jdbcType=VARCHAR},
+      </if>
+      <if test="psoverduedays != null">
+        PSOVERDUEDAYS = #{psoverduedays,jdbcType=VARCHAR},
+      </if>
+      <if test="peoverduedays != null">
+        PEOVERDUEDAYS = #{peoverduedays,jdbcType=VARCHAR},
+      </if>
+      <if test="interestreceivable != null">
+        INTERESTRECEIVABLE = #{interestreceivable,jdbcType=DECIMAL},
+      </if>
+      <if test="dpbalance != null">
+        dpbalance = #{dpbalance,jdbcType=DECIMAL},
+      </if>
+      <if test="userNum != null">
+        user_num = #{userNum,jdbcType=VARCHAR},
+      </if>
+      <if test="deferInterest != null">
+        DEFER_INTEREST = #{deferInterest,jdbcType=DECIMAL},
+      </if>
+      <if test="riskExposuer != null">
+        risk_exposuer = #{riskExposuer,jdbcType=VARCHAR},
+      </if>
+      <if test="assetsClassification != null">
+        assets_classification = #{assetsClassification,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where loan_summary_id = #{loanSummaryId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.csdn.pojo.TbLoanSummary">
+    update tb_loan_summary
+    set loan_num = #{loanNum,jdbcType=VARCHAR},
+      loan_balance = #{loanBalance,jdbcType=DECIMAL},
+      currency_cd = #{currencyCd,jdbcType=VARCHAR},
+      loan_amt = #{loanAmt,jdbcType=DECIMAL},
+      syndicated_share_id = #{syndicatedShareId,jdbcType=VARCHAR},
+      classification_result_cd = #{classificationResultCd,jdbcType=VARCHAR},
+      contract_id = #{contractId,jdbcType=VARCHAR},
+      party_id = #{partyId,jdbcType=VARCHAR},
+      year_classification_result_cd = #{yearClassificationResultCd,jdbcType=VARCHAR},
+      credit_term = #{creditTerm,jdbcType=DECIMAL},
+      cycle_unit = #{cycleUnit,jdbcType=VARCHAR},
+      loan_Recombination_date = #{loanRecombinationDate,jdbcType=DATE},
+      overdue_flag = #{overdueFlag,jdbcType=VARCHAR},
+      Extension_flag = #{extensionFlag,jdbcType=VARCHAR},
+      loan_five_level_classification = #{loanFiveLevelClassification,jdbcType=VARCHAR},
+      loan_status = #{loanStatus,jdbcType=VARCHAR},
+      end_date = #{endDate,jdbcType=DATE},
+      loan_account = #{loanAccount,jdbcType=VARCHAR},
+      loan_actual_maturity = #{loanActualMaturity,jdbcType=DATE},
+      loan_original_expiration_date = #{loanOriginalExpirationDate,jdbcType=DATE},
+      loan_actual_payment_date = #{loanActualPaymentDate,jdbcType=DATE},
+      current_period = #{currentPeriod,jdbcType=VARCHAR},
+      total_periods = #{totalPeriods,jdbcType=VARCHAR},
+      benchmark_interest_rate = #{benchmarkInterestRate,jdbcType=DECIMAL},
+      deposit_amount = #{depositAmount,jdbcType=DECIMAL},
+      loan_term = #{loanTerm,jdbcType=VARCHAR},
+      margin_account = #{marginAccount,jdbcType=VARCHAR},
+      acquisition_date = #{acquisitionDate,jdbcType=DATE},
+      entrusted_payment_mark = #{entrustedPaymentMark,jdbcType=VARCHAR},
+      continuous_arrears_periods = #{continuousArrearsPeriods,jdbcType=VARCHAR},
+      cumulative_arrears_periods = #{cumulativeArrearsPeriods,jdbcType=VARCHAR},
+      now_turn_sign = #{nowTurnSign,jdbcType=VARCHAR},
+      credit_staff_number = #{creditStaffNumber,jdbcType=VARCHAR},
+      loan_officer_name = #{loanOfficerName,jdbcType=VARCHAR},
+      note_number = #{noteNumber,jdbcType=VARCHAR},
+      rate_float_proportion = #{rateFloatProportion,jdbcType=DECIMAL},
+      interest_bearing_manner = #{interestBearingManner,jdbcType=VARCHAR},
+      repayment_channels = #{repaymentChannels,jdbcType=VARCHAR},
+      repayment_account = #{repaymentAccount,jdbcType=VARCHAR},
+      repayment_type = #{repaymentType,jdbcType=VARCHAR},
+      par_value = #{parValue,jdbcType=DECIMAL},
+      customer_unified_num = #{customerUnifiedNum,jdbcType=VARCHAR},
+      detailed_item_name = #{detailedItemName,jdbcType=VARCHAR},
+      loan_account_number = #{loanAccountNumber,jdbcType=VARCHAR},
+      bank_code = #{bankCode,jdbcType=VARCHAR},
+      financial_license_no = #{financialLicenseNo,jdbcType=VARCHAR},
+      internal_mechanism = #{internalMechanism,jdbcType=VARCHAR},
+      detail_item_number = #{detailItemNumber,jdbcType=VARCHAR},
+      bank_name = #{bankName,jdbcType=VARCHAR},
+      repay_date = #{repayDate,jdbcType=DATE},
+      repay_amt = #{repayAmt,jdbcType=DECIMAL},
+      repay_lnterest = #{repayLnterest,jdbcType=DECIMAL},
+      repay_org_num = #{repayOrgNum,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      loan_detail_id = #{loanDetailId,jdbcType=VARCHAR},
+      SUBJECTNO = #{subjectno,jdbcType=VARCHAR},
+      OVERDUESUBJECTNO1 = #{overduesubjectno1,jdbcType=VARCHAR},
+      OVERDUESUBJECTNO2 = #{overduesubjectno2,jdbcType=VARCHAR},
+      DULLSUBJECTNO = #{dullsubjectno,jdbcType=VARCHAR},
+      BADSUBJECTNO = #{badsubjectno,jdbcType=VARCHAR},
+      DISCOUNTSUM = #{discountsum,jdbcType=DECIMAL},
+      normalbalance = #{normalbalance,jdbcType=DECIMAL},
+      OVERDUEBALANCE1 = #{overduebalance1,jdbcType=DECIMAL},
+      OVERDUEBALANCE2 = #{overduebalance2,jdbcType=DECIMAL},
+      DULLBALANCE = #{dullbalance,jdbcType=DECIMAL},
+      BADBALANCE = #{badbalance,jdbcType=DECIMAL},
+      ADVANCEFLAG = #{advanceflag,jdbcType=VARCHAR},
+      SCF_APPLY_NUM = #{scfApplyNum,jdbcType=VARCHAR},
+      INVOICE_BATCH_NUM = #{invoiceBatchNum,jdbcType=VARCHAR},
+      loan_quasi_odd = #{loanQuasiOdd,jdbcType=VARCHAR},
+      INTERESTBALANCE1 = #{interestbalance1,jdbcType=DECIMAL},
+      INTERESTBALANCE2 = #{interestbalance2,jdbcType=DECIMAL},
+      credit_use_address = #{creditUseAddress,jdbcType=VARCHAR},
+      business_num = #{businessNum,jdbcType=VARCHAR},
+      MFNORMALBALANCE = #{mfnormalbalance,jdbcType=DECIMAL},
+      MFOVERDUEBALANCE1 = #{mfoverduebalance1,jdbcType=DECIMAL},
+      MFOVERDUEBALANCE2 = #{mfoverduebalance2,jdbcType=DECIMAL},
+      MFDULLBALANCE = #{mfdullbalance,jdbcType=DECIMAL},
+      MFBADBALANCE = #{mfbadbalance,jdbcType=DECIMAL},
+      product_type = #{productType,jdbcType=VARCHAR},
+      mf_balance = #{mfBalance,jdbcType=DECIMAL},
+      org_num = #{orgNum,jdbcType=VARCHAR},
+      mforgid = #{mforgid,jdbcType=VARCHAR},
+      MFupdateDate = #{mfupdatedate,jdbcType=DATE},
+      MFUPDATEDATE1 = #{mfupdatedate1,jdbcType=DATE},
+      MFINTERESTBALANCE1 = #{mfinterestbalance1,jdbcType=DECIMAL},
+      MFINTERESTBALANCE2 = #{mfinterestbalance2,jdbcType=DECIMAL},
+      old_sum_id = #{oldSumId,jdbcType=VARCHAR},
+      PaymentType = #{paymenttype,jdbcType=VARCHAR},
+      auflag = #{auflag,jdbcType=VARCHAR},
+      KEYVALUE = #{keyvalue,jdbcType=VARCHAR},
+      productcode = #{productcode,jdbcType=VARCHAR},
+      tranDiscountStatus = #{trandiscountstatus,jdbcType=VARCHAR},
+      PSOVERDUEDAYS = #{psoverduedays,jdbcType=VARCHAR},
+      PEOVERDUEDAYS = #{peoverduedays,jdbcType=VARCHAR},
+      INTERESTRECEIVABLE = #{interestreceivable,jdbcType=DECIMAL},
+      dpbalance = #{dpbalance,jdbcType=DECIMAL},
+      user_num = #{userNum,jdbcType=VARCHAR},
+      DEFER_INTEREST = #{deferInterest,jdbcType=DECIMAL},
+      risk_exposuer = #{riskExposuer,jdbcType=VARCHAR},
+      assets_classification = #{assetsClassification,jdbcType=VARCHAR}
+    where loan_summary_id = #{loanSummaryId,jdbcType=VARCHAR}
+  </update>
+</mapper>

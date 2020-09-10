@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.csdn.mapper.userMapper">
+  <resultMap id="BaseResultMap" type="cn.csdn.pojo.user">
+    <id column="number" jdbcType="VARCHAR" property="number" />
+    <result column="Name" jdbcType="VARCHAR" property="name" />
+    <result column="Telephone" jdbcType="VARCHAR" property="telephone" />
+    <result column="Age" jdbcType="INTEGER" property="age" />
+    <result column="Sex" jdbcType="INTEGER" property="sex" />
+    <result column="position" jdbcType="VARCHAR" property="position" />
+    <result column="wages" jdbcType="DECIMAL" property="wages" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    number, Name, Telephone, Age, Sex, position, wages
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from user
+    where number = #{number,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from user
+    where number = #{number,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="cn.csdn.pojo.user">
+    insert into user (number, Name, Telephone, 
+      Age, Sex, position, 
+      wages)
+    values (#{number,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{telephone,jdbcType=VARCHAR}, 
+      #{age,jdbcType=INTEGER}, #{sex,jdbcType=INTEGER}, #{position,jdbcType=VARCHAR}, 
+      #{wages,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.csdn.pojo.user">
+    insert into user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="number != null">
+        number,
+      </if>
+      <if test="name != null">
+        Name,
+      </if>
+      <if test="telephone != null">
+        Telephone,
+      </if>
+      <if test="age != null">
+        Age,
+      </if>
+      <if test="sex != null">
+        Sex,
+      </if>
+      <if test="position != null">
+        position,
+      </if>
+      <if test="wages != null">
+        wages,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="number != null">
+        #{number,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="telephone != null">
+        #{telephone,jdbcType=VARCHAR},
+      </if>
+      <if test="age != null">
+        #{age,jdbcType=INTEGER},
+      </if>
+      <if test="sex != null">
+        #{sex,jdbcType=INTEGER},
+      </if>
+      <if test="position != null">
+        #{position,jdbcType=VARCHAR},
+      </if>
+      <if test="wages != null">
+        #{wages,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.csdn.pojo.user">
+    update user
+    <set>
+      <if test="name != null">
+        Name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="telephone != null">
+        Telephone = #{telephone,jdbcType=VARCHAR},
+      </if>
+      <if test="age != null">
+        Age = #{age,jdbcType=INTEGER},
+      </if>
+      <if test="sex != null">
+        Sex = #{sex,jdbcType=INTEGER},
+      </if>
+      <if test="position != null">
+        position = #{position,jdbcType=VARCHAR},
+      </if>
+      <if test="wages != null">
+        wages = #{wages,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where number = #{number,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.csdn.pojo.user">
+    update user
+    set Name = #{name,jdbcType=VARCHAR},
+      Telephone = #{telephone,jdbcType=VARCHAR},
+      Age = #{age,jdbcType=INTEGER},
+      Sex = #{sex,jdbcType=INTEGER},
+      position = #{position,jdbcType=VARCHAR},
+      wages = #{wages,jdbcType=DECIMAL}
+    where number = #{number,jdbcType=VARCHAR}
+  </update>
+</mapper>

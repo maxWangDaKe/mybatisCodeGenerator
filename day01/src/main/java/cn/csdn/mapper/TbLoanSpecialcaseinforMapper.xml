@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.csdn.mapper.TbLoanSpecialcaseinforMapper">
+  <resultMap id="BaseResultMap" type="cn.csdn.pojo.TbLoanSpecialcaseinfor">
+    <id column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="CLIENT_DESC_INFOR" jdbcType="VARCHAR" property="clientDescInfor" />
+    <result column="APV_DESC_INFOR" jdbcType="VARCHAR" property="apvDescInfor" />
+    <result column="CON_DESC_INFOR" jdbcType="VARCHAR" property="conDescInfor" />
+    <result column="GUARANTY_DESC_INFOR" jdbcType="VARCHAR" property="guarantyDescInfor" />
+    <result column="PAY_DESC_INFOR" jdbcType="VARCHAR" property="payDescInfor" />
+    <result column="OTHER_DESC_INFOR" jdbcType="VARCHAR" property="otherDescInfor" />
+    <result column="CLIENT__ESTIMATED" jdbcType="TIMESTAMP" property="clientEstimated" />
+    <result column="APV__ESTIMATED" jdbcType="TIMESTAMP" property="apvEstimated" />
+    <result column="CON__ESTIMATED" jdbcType="TIMESTAMP" property="conEstimated" />
+    <result column="GUARANTY__ESTIMATED" jdbcType="TIMESTAMP" property="guarantyEstimated" />
+    <result column="PAY__ESTIMATED" jdbcType="TIMESTAMP" property="payEstimated" />
+    <result column="OTHER__ESTIMATED" jdbcType="TIMESTAMP" property="otherEstimated" />
+    <result column="DETAIL_ID" jdbcType="VARCHAR" property="detailId" />
+    <result column="REMARKS" jdbcType="VARCHAR" property="remarks" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    ID, CLIENT_DESC_INFOR, APV_DESC_INFOR, CON_DESC_INFOR, GUARANTY_DESC_INFOR, PAY_DESC_INFOR, 
+    OTHER_DESC_INFOR, CLIENT__ESTIMATED, APV__ESTIMATED, CON__ESTIMATED, GUARANTY__ESTIMATED, 
+    PAY__ESTIMATED, OTHER__ESTIMATED, DETAIL_ID, REMARKS
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tb_loan_specialcaseinfor
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from tb_loan_specialcaseinfor
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="cn.csdn.pojo.TbLoanSpecialcaseinfor">
+    insert into tb_loan_specialcaseinfor (ID, CLIENT_DESC_INFOR, APV_DESC_INFOR, 
+      CON_DESC_INFOR, GUARANTY_DESC_INFOR, PAY_DESC_INFOR, 
+      OTHER_DESC_INFOR, CLIENT__ESTIMATED, APV__ESTIMATED, 
+      CON__ESTIMATED, GUARANTY__ESTIMATED, PAY__ESTIMATED, 
+      OTHER__ESTIMATED, DETAIL_ID, REMARKS
+      )
+    values (#{id,jdbcType=VARCHAR}, #{clientDescInfor,jdbcType=VARCHAR}, #{apvDescInfor,jdbcType=VARCHAR}, 
+      #{conDescInfor,jdbcType=VARCHAR}, #{guarantyDescInfor,jdbcType=VARCHAR}, #{payDescInfor,jdbcType=VARCHAR}, 
+      #{otherDescInfor,jdbcType=VARCHAR}, #{clientEstimated,jdbcType=TIMESTAMP}, #{apvEstimated,jdbcType=TIMESTAMP}, 
+      #{conEstimated,jdbcType=TIMESTAMP}, #{guarantyEstimated,jdbcType=TIMESTAMP}, #{payEstimated,jdbcType=TIMESTAMP}, 
+      #{otherEstimated,jdbcType=TIMESTAMP}, #{detailId,jdbcType=VARCHAR}, #{remarks,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="cn.csdn.pojo.TbLoanSpecialcaseinfor">
+    insert into tb_loan_specialcaseinfor
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="clientDescInfor != null">
+        CLIENT_DESC_INFOR,
+      </if>
+      <if test="apvDescInfor != null">
+        APV_DESC_INFOR,
+      </if>
+      <if test="conDescInfor != null">
+        CON_DESC_INFOR,
+      </if>
+      <if test="guarantyDescInfor != null">
+        GUARANTY_DESC_INFOR,
+      </if>
+      <if test="payDescInfor != null">
+        PAY_DESC_INFOR,
+      </if>
+      <if test="otherDescInfor != null">
+        OTHER_DESC_INFOR,
+      </if>
+      <if test="clientEstimated != null">
+        CLIENT__ESTIMATED,
+      </if>
+      <if test="apvEstimated != null">
+        APV__ESTIMATED,
+      </if>
+      <if test="conEstimated != null">
+        CON__ESTIMATED,
+      </if>
+      <if test="guarantyEstimated != null">
+        GUARANTY__ESTIMATED,
+      </if>
+      <if test="payEstimated != null">
+        PAY__ESTIMATED,
+      </if>
+      <if test="otherEstimated != null">
+        OTHER__ESTIMATED,
+      </if>
+      <if test="detailId != null">
+        DETAIL_ID,
+      </if>
+      <if test="remarks != null">
+        REMARKS,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="clientDescInfor != null">
+        #{clientDescInfor,jdbcType=VARCHAR},
+      </if>
+      <if test="apvDescInfor != null">
+        #{apvDescInfor,jdbcType=VARCHAR},
+      </if>
+      <if test="conDescInfor != null">
+        #{conDescInfor,jdbcType=VARCHAR},
+      </if>
+      <if test="guarantyDescInfor != null">
+        #{guarantyDescInfor,jdbcType=VARCHAR},
+      </if>
+      <if test="payDescInfor != null">
+        #{payDescInfor,jdbcType=VARCHAR},
+      </if>
+      <if test="otherDescInfor != null">
+        #{otherDescInfor,jdbcType=VARCHAR},
+      </if>
+      <if test="clientEstimated != null">
+        #{clientEstimated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="apvEstimated != null">
+        #{apvEstimated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="conEstimated != null">
+        #{conEstimated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="guarantyEstimated != null">
+        #{guarantyEstimated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="payEstimated != null">
+        #{payEstimated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="otherEstimated != null">
+        #{otherEstimated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="detailId != null">
+        #{detailId,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null">
+        #{remarks,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.csdn.pojo.TbLoanSpecialcaseinfor">
+    update tb_loan_specialcaseinfor
+    <set>
+      <if test="clientDescInfor != null">
+        CLIENT_DESC_INFOR = #{clientDescInfor,jdbcType=VARCHAR},
+      </if>
+      <if test="apvDescInfor != null">
+        APV_DESC_INFOR = #{apvDescInfor,jdbcType=VARCHAR},
+      </if>
+      <if test="conDescInfor != null">
+        CON_DESC_INFOR = #{conDescInfor,jdbcType=VARCHAR},
+      </if>
+      <if test="guarantyDescInfor != null">
+        GUARANTY_DESC_INFOR = #{guarantyDescInfor,jdbcType=VARCHAR},
+      </if>
+      <if test="payDescInfor != null">
+        PAY_DESC_INFOR = #{payDescInfor,jdbcType=VARCHAR},
+      </if>
+      <if test="otherDescInfor != null">
+        OTHER_DESC_INFOR = #{otherDescInfor,jdbcType=VARCHAR},
+      </if>
+      <if test="clientEstimated != null">
+        CLIENT__ESTIMATED = #{clientEstimated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="apvEstimated != null">
+        APV__ESTIMATED = #{apvEstimated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="conEstimated != null">
+        CON__ESTIMATED = #{conEstimated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="guarantyEstimated != null">
+        GUARANTY__ESTIMATED = #{guarantyEstimated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="payEstimated != null">
+        PAY__ESTIMATED = #{payEstimated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="otherEstimated != null">
+        OTHER__ESTIMATED = #{otherEstimated,jdbcType=TIMESTAMP},
+      </if>
+      <if test="detailId != null">
+        DETAIL_ID = #{detailId,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null">
+        REMARKS = #{remarks,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.csdn.pojo.TbLoanSpecialcaseinfor">
+    update tb_loan_specialcaseinfor
+    set CLIENT_DESC_INFOR = #{clientDescInfor,jdbcType=VARCHAR},
+      APV_DESC_INFOR = #{apvDescInfor,jdbcType=VARCHAR},
+      CON_DESC_INFOR = #{conDescInfor,jdbcType=VARCHAR},
+      GUARANTY_DESC_INFOR = #{guarantyDescInfor,jdbcType=VARCHAR},
+      PAY_DESC_INFOR = #{payDescInfor,jdbcType=VARCHAR},
+      OTHER_DESC_INFOR = #{otherDescInfor,jdbcType=VARCHAR},
+      CLIENT__ESTIMATED = #{clientEstimated,jdbcType=TIMESTAMP},
+      APV__ESTIMATED = #{apvEstimated,jdbcType=TIMESTAMP},
+      CON__ESTIMATED = #{conEstimated,jdbcType=TIMESTAMP},
+      GUARANTY__ESTIMATED = #{guarantyEstimated,jdbcType=TIMESTAMP},
+      PAY__ESTIMATED = #{payEstimated,jdbcType=TIMESTAMP},
+      OTHER__ESTIMATED = #{otherEstimated,jdbcType=TIMESTAMP},
+      DETAIL_ID = #{detailId,jdbcType=VARCHAR},
+      REMARKS = #{remarks,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>
